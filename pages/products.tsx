@@ -1,13 +1,16 @@
 import NavBar from "@/components/NavBar";
 import ProductCard from "@/components/Product";
 import { Product } from "@/types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "@/styles/homepage.module.css";
+import { Button } from "react-bootstrap";
+import { CartContext } from "@/contexts/CartContext";
 
 export default function Products() {
   const [show, setShow] = useState<boolean>(false);
   const [products, setProducts] = useState<Product[] | null | void>(null);
   const [filteredProducts, setFilteredProducts] = useState<Object | null>(null);
+  const { cart } = useContext(CartContext);
 
   const filterProducts = (products: Product[]) => {
     const groupByCategory = products.reduce((group: any, product: Product) => {
@@ -16,7 +19,7 @@ export default function Products() {
       group[name].push(product);
       return group;
     }, {});
-    console.log(groupByCategory);
+    // console.log(groupByCategory);
     return groupByCategory;
   };
 
@@ -28,7 +31,7 @@ export default function Products() {
     fetch("/api/getProducts", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         setProducts(result);
         setFilteredProducts(filterProducts(result));
         setShow(true);
@@ -45,6 +48,7 @@ export default function Products() {
   return (
     <>
       <NavBar />
+      <Button onClick={() => console.log(cart)}>Hello</Button>
       <p className={styles.title}>Products</p>
       <div className={styles.products_div}>
         {show &&

@@ -1,0 +1,27 @@
+.title {
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.shopping_cart {
+  display: flex;
+  justify-content: space-around;
+}
+
+.item_list {
+}
+
+.costs {
+}
+
+.cart_item {
+  display: flex;
+  align-items: center;
+}
+
+.cart_image {
+  width: 50px;
+  height: auto;
+  max-height: 100px;
+}

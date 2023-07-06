@@ -9,3 +9,8 @@
   font-size: 30px;
   color: darkblue;
 }
+
+.cart_icon {
+  background-color: white;
+  cursor: pointer;
+}

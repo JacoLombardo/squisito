@@ -8,3 +8,8 @@ export interface Product {
   type: string;
   tags: string[];
 }
+
+export interface CartItem {
+  number: number;
+  item: Product;
+}

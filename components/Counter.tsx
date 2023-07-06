@@ -1,20 +1,33 @@
-import styles from "@/styles/counter.module.css";
+import styles from "@/styles/component.module.css";
+import { Dispatch, SetStateAction } from "react";
 import { Button } from "react-bootstrap";
 
 interface Props {
   counter: number;
-  setCounter: any;
+  setCounter: Dispatch<SetStateAction<number>>;
+  inCart: boolean;
+  setInCart: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Counter({ counter, setCounter }: Props) {
+export default function Counter({
+  counter,
+  setCounter,
+  inCart,
+  setInCart,
+}: Props) {
   const increase = () => {
     setCounter((count: number) => count + 1);
   };
 
   const decrease = () => {
-    if (counter > 1) {
+    if (inCart && counter > 0) {
+      setCounter((count: number) => count - 1);
+    } else if (!inCart && counter > 1) {
       setCounter((count: number) => count - 1);
     }
+    // if (counter > 1) {
+    //   setCounter((count: number) => count - 1);
+    // }
   };
   return (
     <>
