@@ -1,0 +1,11 @@
+.counter {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  justify-content: center;
+}
+
+.counter_output {
+  font-size: 30px;
+  color: darkblue;
+}

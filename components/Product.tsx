@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
+import Counter from "./Counter";
 
 interface Props {
   product: Product;
@@ -12,13 +13,16 @@ interface Props {
 export default function ProductCard({ product, variants }: Props) {
   const [color, setColor] = useState<string>("black");
   const [itemImage, setItemImage] = useState<string>(product.image);
+  const [counter, setCounter] = useState<number>(1);
   const colorVariants = Object.entries(variants)[0][1];
-  console.log("colorVariants", colorVariants);
+  // console.log("variants", variants);
+  // console.log("colorVariants", colorVariants);
 
   useEffect(() => {
     setItemImage(
-      colorVariants.filter((variant: any) => variant.color.includes(color))[0]
-        .image
+      colorVariants.filter((variant: Product) =>
+        variant.color.includes(color)
+      )[0].image
     );
   }, [color]);
   return (
@@ -28,7 +32,13 @@ export default function ProductCard({ product, variants }: Props) {
         <Card.Header>
           {colorVariants.map((variant: any, index: number) => {
             return (
-              <a key={index} onClick={() => setColor(variant.color)}>
+              <a
+                key={index}
+                onClick={() => {
+                  setColor(variant.color);
+                  setCounter(1);
+                }}
+              >
                 <Image
                   alt={`${variant.color}`}
                   title={`${variant.color}`}
@@ -47,7 +57,15 @@ export default function ProductCard({ product, variants }: Props) {
           <p>Color: {color}</p>
           <Card.Text>{product.description}</Card.Text>
 
-          <Button variant="primary">Go somewhere</Button>
+          <Card.Footer
+            style={{
+              display: "flex",
+            }}
+          >
+            <Counter counter={counter} setCounter={setCounter} />
+
+            <Button variant="primary">Add to the cart</Button>
+          </Card.Footer>
         </Card.Body>
       </Card>
     </>

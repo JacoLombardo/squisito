@@ -2,6 +2,7 @@ import NavBar from "@/components/NavBar";
 import ProductCard from "@/components/Product";
 import { Product } from "@/types";
 import { useEffect, useState } from "react";
+import styles from "@/styles/homepage.module.css";
 
 export default function Products() {
   const [show, setShow] = useState<boolean>(false);
@@ -15,6 +16,7 @@ export default function Products() {
       group[name].push(product);
       return group;
     }, {});
+    console.log(groupByCategory);
     return groupByCategory;
   };
 
@@ -43,28 +45,26 @@ export default function Products() {
   return (
     <>
       <NavBar />
-      <p>Products</p>
-      {show &&
-        filteredProducts &&
-        products
-          ?.filter((product) => product.type.includes("main"))
-          .map((product: Product, index: number) => {
-            return (
-              <ProductCard
-                key={index}
-                product={product}
-                variants={Object.fromEntries(
-                  Object.entries(filteredProducts).filter(([key]) =>
-                    key.includes(product.name)
-                  )
-                )}
-              />
-            );
-          })}
-      {/* {show &&
-        products?.map((product: Product, index: number) => {
-          return <ProductCard key={index} product={product} />;
-        })} */}
+      <p className={styles.title}>Products</p>
+      <div className={styles.products_div}>
+        {show &&
+          filteredProducts &&
+          products
+            ?.filter((product) => product.type.includes("main"))
+            .map((product: Product, index: number) => {
+              return (
+                <ProductCard
+                  key={index}
+                  product={product}
+                  variants={Object.fromEntries(
+                    Object.entries(filteredProducts).filter(([key]) =>
+                      key.includes(product.name)
+                    )
+                  )}
+                />
+              );
+            })}
+      </div>
     </>
   );
 }
