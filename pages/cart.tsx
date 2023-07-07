@@ -1,13 +1,18 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import CartListItem from "@/components/CartListItem";
-import Costs from "@/components/Costs";
+import CartTotal from "@/components/CartTotal";
 import NavBar from "@/components/NavBar";
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
 import { CartItem } from "@/types";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 
 export default function ShoppingCart() {
-  const { cart, setCart } = useContext(CartContext);
+  const { cart, calculateTotal, total } = useContext(CartContext);
+
+  useEffect(() => {
+    calculateTotal(cart);
+  }, []);
 
   return (
     <>
@@ -20,12 +25,16 @@ export default function ShoppingCart() {
             cart
               .sort((a, b) => a.item.internal_id - b.item.internal_id)
               .map((item: CartItem, index: number) => {
-                return <CartListItem key={index} item={item} />;
+                return (
+                  <CartListItem
+                    key={index}
+                    item={item}
+                    calculateTotal={calculateTotal}
+                  />
+                );
               })}
         </div>
-        <div className={styles.costs}>
-          <Costs />
-        </div>
+        <CartTotal total={total} />
       </div>
     </>
   );

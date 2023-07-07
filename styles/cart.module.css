@@ -5,17 +5,24 @@
 }
 
 .shopping_cart {
+  max-width: 600px;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .item_list {
 }
 
-.costs {
+.cart_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.cart_item {
+.cart_item_info {
   display: flex;
   align-items: center;
 }
@@ -34,6 +41,18 @@
   max-width: 100px;
   height: 90%;
 }
-
 .counter_div {
+  position: absolute;
+  margin-left: 350px;
+}
+
+.total_div {
+  text-align: right;
+}
+
+.remove_item {
+  color: red;
+  font-size: small;
+  cursor: pointer;
+  margin-left: 5px;
 }
