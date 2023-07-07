@@ -1,8 +1,9 @@
+import CartListItem from "@/components/CartListItem";
+import Costs from "@/components/Costs";
 import NavBar from "@/components/NavBar";
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
 import { CartItem } from "@/types";
-import Image from "next/image";
 import { useContext } from "react";
 
 export default function ShoppingCart() {
@@ -19,26 +20,11 @@ export default function ShoppingCart() {
             cart
               .sort((a, b) => a.item.internal_id - b.item.internal_id)
               .map((item: CartItem, index: number) => {
-                return (
-                  <div key={index} className={styles.cart_item}>
-                    <Image
-                      alt={item.item.name}
-                      title={item.item.name}
-                      src={item.item.image}
-                      width={0}
-                      height={0}
-                      className={styles.cart_image}
-                      sizes="100vw"
-                      // style={{ maxWidth: "100px", maxHeight: "auto" }}
-                    />
-                    <p>{item.item.name}</p>
-                    <p>{item.item.color}</p>
-                  </div>
-                );
+                return <CartListItem key={index} item={item} />;
               })}
         </div>
         <div className={styles.costs}>
-          <p>Costs</p>
+          <Costs />
         </div>
       </div>
     </>
