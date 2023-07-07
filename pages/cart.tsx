@@ -5,7 +5,7 @@ import NavBar from "@/components/NavBar";
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
 import { CartItem } from "@/types";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 
 export default function ShoppingCart() {
   const { cart, calculateTotal, total } = useContext(CartContext);
