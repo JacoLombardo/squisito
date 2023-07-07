@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Product } from "@/types";
 import Image from "next/image";
 import { useContext, useEffect, useState } from "react";
@@ -17,10 +18,6 @@ export default function ProductCard({ product, variants }: Props) {
   const [counter, setCounter] = useState<number>(1);
   const { cart, setCart } = useContext(CartContext);
   const colorVariants = Object.entries(variants)[0][1];
-  // console.log("product", product);
-  // console.log("variants", variants);
-  // console.log("colorVariants", colorVariants);
-  // console.log("actualVariant", actualVariant);
 
   const AddToCart = () => {
     if (inCart) {

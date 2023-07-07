@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import NavBar from "@/components/NavBar";
 import ProductCard from "@/components/Product";
 import { Product } from "@/types";
@@ -19,7 +20,6 @@ export default function Products() {
       group[name].push(product);
       return group;
     }, {});
-    // console.log(groupByCategory);
     return groupByCategory;
   };
 
@@ -31,7 +31,6 @@ export default function Products() {
     fetch("/api/getProducts", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        // console.log(result);
         setProducts(result);
         setFilteredProducts(filterProducts(result));
         setShow(true);

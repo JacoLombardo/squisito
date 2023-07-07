@@ -1,6 +1,6 @@
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 interface Props {
   total: number;
