@@ -8,19 +8,17 @@ import Link from "next/link";
 function NavBar() {
   return (
     <>
-      <Navbar bg="dark" data-bs-theme="dark">
+      <Navbar bg="white" data-bs-theme="white">
         <Container>
           <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
+          <Nav>
             <Nav.Link as={Link} href="/">
               Home
             </Nav.Link>
             <Nav.Link as={Link} href="/products">
               Products
             </Nav.Link>
-          </Nav>
-        </Container>
-        <Nav.Link as={Link} href="/cart">
+            <Nav.Link as={Link} href="/cart">
           <Image
             alt="shopping-cart"
             title="Go to the shopping cart!"
@@ -30,6 +28,8 @@ function NavBar() {
             className={styles.cart_icon}
           />
         </Nav.Link>
+          </Nav>
+        </Container>
       </Navbar>
     </>
   );

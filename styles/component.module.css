@@ -1,3 +1,13 @@
+/* *{
+  box-sizing: border-box;
+  background: rgb(0, 100, 0, 0.1) !important;
+} */
+
+@font-face {
+  font-family: "poppins";
+  src: url(Poppins-Regular.ttf);
+}
+
 .counter {
   display: flex;
   align-items: center;
@@ -13,4 +23,19 @@
 .cart_icon {
   background-color: white;
   cursor: pointer;
+  display: block;
+}
+
+.navbar-nav {
+  font-family: "poppins";
+  src: url(Poppins-Regular.ttf);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.nav-link:hover {
+  color: red;
 }
