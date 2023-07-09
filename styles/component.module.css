@@ -1,42 +1,51 @@
-/* *{
+/* .global {
   box-sizing: border-box;
-  background: rgb(0, 100, 0, 0.1) !important;
+  background: rgb(0, 100, 0, 0.1);
 } */
 
+.navbar {
+  background-color: #ffffff;
+}
+
 @font-face {
-  font-family: "poppins";
+  font-family: 'poppins';
   src: url(Poppins-Regular.ttf);
 }
 
-.counter {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  justify-content: center;
+.toggle {
+  border-color: white;
+  border-radius: 0;
+  height: 1px;
+  color: black;
 }
 
-.counter_output {
-  font-size: 30px;
-  color: darkblue;
-}
-
-.cart_icon {
+.toggle-icon-bar {
   background-color: white;
-  cursor: pointer;
-  display: block;
 }
 
-.navbar-nav {
-  font-family: "poppins";
-  src: url(Poppins-Regular.ttf);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-left: 70px;
-  margin-right: 70px;
+.toggle.collapsed .toggle-icon-bar:last-child {
+  height: 2px;
+  margin-top: -1px;
 }
 
-.nav-link:hover {
-  color: red;
-  background-color: blue;
+.nav {
+  margin-left: auto;
+}
+
+.navLink {
+  font-family: 'poppins';
+  color: #000;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.cartIcon {
+  vertical-align: middle;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cartIcon {
+    visibility: visible;
+  }
 }
