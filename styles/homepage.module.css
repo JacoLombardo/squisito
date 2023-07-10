@@ -1,5 +1,30 @@
 .title {
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 60px;
   text-align: center;
+  font-family: "poppins";
+}
+
+@font-face {
+  font-family: "poppins";
+  src: local("poppins"),
+    url("Poppins-Regular.ttf");
+}
+
+.navbar-divider {
+  width: 20px;
+  display: inline-block;
+}
+
+.navbar-divider::after {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 1px;
+  background-color: #000000;
+  margin: 0 6px;
+}
+
+.nav-link:hover {
+  transform: scale(1.1);
+  color: red; 
 }

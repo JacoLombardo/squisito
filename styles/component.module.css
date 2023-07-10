@@ -1,16 +1,51 @@
-.counter {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  justify-content: center;
+/* .global {
+  box-sizing: border-box;
+  background: rgb(0, 100, 0, 0.1);
+} */
+
+.navbar {
+  background-color: #ffffff;
 }
 
-.counter_output {
-  font-size: 30px;
-  color: darkblue;
+@font-face {
+  font-family: 'poppins';
+  src: url(Poppins-Regular.ttf);
 }
 
-.cart_icon {
+.toggle {
+  border-color: white;
+  border-radius: 0;
+  height: 1px;
+  color: black;
+}
+
+.toggle-icon-bar {
   background-color: white;
-  cursor: pointer;
+}
+
+.toggle.collapsed .toggle-icon-bar:last-child {
+  height: 2px;
+  margin-top: -1px;
+}
+
+.nav {
+  margin-left: auto;
+}
+
+.navLink {
+  font-family: 'poppins';
+  color: #000;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.cartIcon {
+  vertical-align: middle;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .cartIcon {
+    visibility: visible;
+  }
 }
