@@ -10,14 +10,15 @@ function NavBar() {
     <Navbar expand="lg" className={styles.navbar}>
       <Container>
         <Navbar.Brand href="#home">
-          <Image
+          <span className={styles.brandText}>Saporito</span>
+          {/* <Image
                 alt="search"
                 title="Search a Product"
                 src="/Images/Navbar/logo.png"
                 width={120}
                 height={45}
                 className={`${styles.cartLogo}`}
-              />
+              /> */}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.toggle} />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -37,7 +38,7 @@ function NavBar() {
               />
             </Nav.Link>
             <Nav.Link as={Link} href="/cart" className={styles.navLink}>
-              Card
+              Cart
               <Image
                 alt="shopping-cart"
                 title="Go to Shopping Cart"

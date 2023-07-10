@@ -32,11 +32,11 @@ export default function Counter({
   return (
     <>
       <div className={styles.counter}>
-        <Button variant="primary" onClick={decrease}>
+        <Button variant="primary" className={styles.product_button} onClick={decrease}>
           -
         </Button>
         <span className={styles.counter_output}>{counter}</span>
-        <Button variant="primary" onClick={increase}>
+        <Button variant="primary" className={styles.product_button} onClick={increase}>
           +
         </Button>
       </div>

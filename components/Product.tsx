@@ -57,9 +57,10 @@ export default function ProductCard({ product, variants }: Props) {
       }
     }
   }, [actualVariant]);
-  return (
+return (
     <>
       <Card className={styles.product_card}>
+
         <Link href={`/product/${actualVariant.internal_id}`}>
           <div className={styles.product_img_div}>
             <Card.Img
@@ -69,38 +70,31 @@ export default function ProductCard({ product, variants }: Props) {
             />
           </div>
         </Link>
-
-        <Card.Header>
-          {colorVariants.map((variant: Product, index: number) => {
-            return (
-              <a
-                key={index}
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setActualVariant(variant);
-                }}
-              >
-                <Image
-                  alt={`${variant.color}`}
-                  title={`${variant.color}`}
-                  src={`/Images/Colors/${variant.color}.png`}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            );
-          })}
+        <Card.Header className={styles.product_header}>
+          {colorVariants.map((variant: Product, index: number) => (
+            <a
+              key={index}
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setActualVariant(variant);
+              }}
+            >
+              <Image
+                alt={`${variant.color}`}
+                title={`${variant.color}`}
+                src={`/Images/Colors/${variant.color}.png`}
+                width={25}
+                height={25}
+              />
+            </a>
+          ))}
         </Card.Header>
-        <Card.Body>
+        <Card.Body className={styles.card_body}>
           <Card.Title>{actualVariant.name}</Card.Title>
           <Card.Subtitle>{actualVariant.price},00€</Card.Subtitle>
-          <p>IN STOCK</p>
+          <p className={styles.instock}>IN STOCK</p>
           {/* <p>Color: {actualVariant.color}</p> */}
           {/* <Card.Text>{actualVariant.description}</Card.Text> */}
-          <Link href={`/product/${actualVariant.internal_id}`}>
-            <Card.Text>More info...</Card.Text>
-          </Link>
-          <Card.Footer className={styles.product_footer}>
             <Counter
               counter={counter}
               setCounter={setCounter}
@@ -109,15 +103,14 @@ export default function ProductCard({ product, variants }: Props) {
             />
 
             {inCart ? (
-              <Button variant="primary" onClick={AddToCart}>
-                Modify
+              <Button variant="primary" className={styles.product_button} onClick={AddToCart}>
+                Modify Order
               </Button>
             ) : (
-              <Button variant="primary" onClick={AddToCart}>
-                Add
+              <Button variant="primary" className={styles.product_button} onClick={AddToCart}>
+                Add to Cart
               </Button>
             )}
-          </Card.Footer>
         </Card.Body>
       </Card>
     </>

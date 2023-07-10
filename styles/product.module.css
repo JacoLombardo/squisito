@@ -3,68 +3,122 @@
   src: url(Poppins-Regular.ttf);
 }
 
+.body {
+  font-family: "poppins", sans-serif;
+}
+
 .title {
-  font-size: larger;
-  font-weight: bolder;
-  text-align: center;
+  font-size: 60px;
+  text-align: left;
+  font-family: "poppins";
+  margin-right: 50px;
+  max-width: 1200px;
+}
+
+.titleContainer {
+  display: flex;
+  max-width: 1200px;
+  margin-left: 105px;
 }
 
 .products_div {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 /* PRODUCT CARD */
 
 .product_card {
   display: flex;
+  flex-direction: column;
   margin: 10px;
-  width: 220px;
-  height: 480px;
-  padding-top: 10px;
+  width: calc(20%);
+  max-width: 300px;
+  height: 400px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
 }
 
 .product_img_div {
   display: flex;
   justify-content: center;
-  width: 220px;
+  align-items: center;
+  width: 100%;
   height: 200px;
   background-color: white;
+  border-radius: 10px 10px 0 0;
 }
 
 .product_img {
   height: auto;
   max-height: 200px;
   width: auto;
-  max-width: 200px;
+  max-width: 100%;
+  border-radius: 10px 10px 0 0;
+  margin-left: 2px;
 }
 
 .product_footer {
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 80px;
-  width: 200px;
-  bottom: 0px;
-  left: 0px;
-  position: absolute;
-}
-
-/* PRODUCT INFO */
-
-.product_info_div {
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.product_info_image {
   width: 100%;
-  height: 100%;
-  max-width: 600px;
-  max-height: 600px;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.product_info {
-  display: flex;
-  flex-direction: column;
+.product_button {
+  font-family: "poppins";
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
 }
+
+.product_button:hover {
+  background-color: red;
+}
+
+.color_icon {
+  border-radius: 50%;
+}
+
+.product_footer {
+  background-color: #f1f1f1;
+}
+
+.product_header {
+  display: flex;
+}
+
+.product_header a {
+  display: inline-block;
+  margin-right: 2px;
+  padding: 1px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product_header a:hover {
+  background-color: red;
+}
+
+.product_header a img {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.instock {
+  font-size: 10px;
+}
+
