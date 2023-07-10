@@ -28,7 +28,7 @@ export default function Products() {
       headers: new Headers(),
     };
 
-    fetch("/api/getProducts", requestOptions)
+    fetch("/api/get-products", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         setProducts(result);

@@ -7,6 +7,7 @@ import { Button } from "react-bootstrap";
 import Counter from "./Counter";
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/product.module.css";
+import Link from "next/link";
 
 interface Props {
   product: Product;
@@ -59,13 +60,16 @@ export default function ProductCard({ product, variants }: Props) {
   return (
     <>
       <Card className={styles.product_card}>
-        <div className={styles.product_img_div}>
-          <Card.Img
-            variant="top"
-            src={actualVariant.image}
-            className={styles.product_img}
-          />
-        </div>
+        <Link href={`/product/${actualVariant.internal_id}`}>
+          <div className={styles.product_img_div}>
+            <Card.Img
+              variant="top"
+              src={actualVariant.image}
+              className={styles.product_img}
+            />
+          </div>
+        </Link>
+
         <Card.Header>
           {colorVariants.map((variant: Product, index: number) => {
             return (
@@ -93,6 +97,9 @@ export default function ProductCard({ product, variants }: Props) {
           <p>IN STOCK</p>
           {/* <p>Color: {actualVariant.color}</p> */}
           {/* <Card.Text>{actualVariant.description}</Card.Text> */}
+          <Link href={`/product/${actualVariant.internal_id}`}>
+            <Card.Text>More info...</Card.Text>
+          </Link>
           <Card.Footer className={styles.product_footer}>
             <Counter
               counter={counter}
@@ -103,11 +110,11 @@ export default function ProductCard({ product, variants }: Props) {
 
             {inCart ? (
               <Button variant="primary" onClick={AddToCart}>
-                Modify order
+                Modify
               </Button>
             ) : (
               <Button variant="primary" onClick={AddToCart}>
-                Add to the cart
+                Add
               </Button>
             )}
           </Card.Footer>
