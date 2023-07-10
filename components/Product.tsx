@@ -56,7 +56,7 @@ export default function ProductCard({ product, variants }: Props) {
       }
     }
   }, [actualVariant]);
-  return (
+return (
     <>
       <Card className={styles.product_card}>
         <div className={styles.product_img_div}>
@@ -66,34 +66,31 @@ export default function ProductCard({ product, variants }: Props) {
             className={styles.product_img}
           />
         </div>
-        <Card.Header>
-          {colorVariants.map((variant: Product, index: number) => {
-            return (
-              <a
-                key={index}
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setActualVariant(variant);
-                }}
-              >
-                <Image
-                  alt={`${variant.color}`}
-                  title={`${variant.color}`}
-                  src={`/Images/Colors/${variant.color}.png`}
-                  width={25}
-                  height={25}
-                />
-              </a>
-            );
-          })}
+        <Card.Header className={styles.product_header}>
+          {colorVariants.map((variant: Product, index: number) => (
+            <a
+              key={index}
+              style={{ cursor: "pointer" }}
+              onClick={() => {
+                setActualVariant(variant);
+              }}
+            >
+              <Image
+                alt={`${variant.color}`}
+                title={`${variant.color}`}
+                src={`/Images/Colors/${variant.color}.png`}
+                width={25}
+                height={25}
+              />
+            </a>
+          ))}
         </Card.Header>
-        <Card.Body>
+        <Card.Body className={styles.card_body}>
           <Card.Title>{actualVariant.name}</Card.Title>
           <Card.Subtitle>{actualVariant.price},00€</Card.Subtitle>
-          <p>IN STOCK</p>
+          <p className={styles.instock}>IN STOCK</p>
           {/* <p>Color: {actualVariant.color}</p> */}
           {/* <Card.Text>{actualVariant.description}</Card.Text> */}
-          <Card.Footer className={styles.product_footer}>
             <Counter
               counter={counter}
               setCounter={setCounter}
@@ -102,15 +99,14 @@ export default function ProductCard({ product, variants }: Props) {
             />
 
             {inCart ? (
-              <Button variant="primary" onClick={AddToCart}>
-                Modify order
+              <Button variant="primary" className={styles.product_button} onClick={AddToCart}>
+                Modify Order
               </Button>
             ) : (
-              <Button variant="primary" onClick={AddToCart}>
-                Add to the cart
+              <Button variant="primary" className={styles.product_button} onClick={AddToCart}>
+                Add to Cart
               </Button>
             )}
-          </Card.Footer>
         </Card.Body>
       </Card>
     </>

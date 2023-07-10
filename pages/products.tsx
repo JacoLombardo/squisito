@@ -47,8 +47,10 @@ export default function Products() {
   return (
     <>
       <NavBar />
-      <Button onClick={() => console.log(cart)}>Hello</Button>
-      <p className={styles.title}>Products</p>
+      {/* <Button onClick={() => console.log(cart)}>Hello</Button> */}
+      <div className={styles.titleContainer}>
+        <p className={styles.title}>Products</p>
+        </div>
       <div className={styles.products_div}>
         {show &&
           filteredProducts &&

@@ -10,7 +10,15 @@ export default function Home() {
         <div className={styles.card}></div>
         <div className={styles.card}></div>
       </div>
-      <p className={styles.title}>Discover a wide range of kitchen appliance tools</p>
+      <div className={styles.titleContainer}>
+        <p className={styles.title}>Discover a wide range of kitchen appliance tools</p>
+        <div className={styles.discoverContainer}>
+          <span className={styles.discover}>
+            <span className={styles.discoverText}>Discover</span>
+            <span className={styles.arrow}>→</span>
+          </span>
+        </div>
+      </div>
     </>
   );
 }

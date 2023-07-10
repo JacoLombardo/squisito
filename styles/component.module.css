@@ -7,6 +7,10 @@
   background-color: #ffffff;
 }
 
+.brandText {
+  font-size: 40px;
+}
+
 @font-face {
   font-family: 'poppins';
   src: url(Poppins-Regular.ttf);
@@ -49,4 +53,35 @@
   .cartIcon {
     visibility: visible;
   }
+}
+
+.product_button {
+  font-family: "poppins";
+  font-size: 14px;
+  padding-left: 3px;
+  padding-right: 3px;
+  padding-top: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.product_button:hover {
+  background-color: red;
+}
+
+.card_body {
+  background-color: #f1f1f1;
+  display: flex;
+  align-items: center;
+}
+
+.counter_output {
+  background-color: #f1f1f1;;
 }
