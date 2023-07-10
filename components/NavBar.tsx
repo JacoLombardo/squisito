@@ -9,17 +9,24 @@ function NavBar() {
   return (
     <Navbar expand="lg" className={styles.navbar}>
       <Container>
-        <Navbar.Brand href="#home" className={styles.brand}>
-          SAPORITO
+        <Navbar.Brand href="#home">
+          <Image
+                alt="search"
+                title="Search a Product"
+                src="/Images/Navbar/logo.png"
+                width={120}
+                height={45}
+                className={`${styles.cartLogo}`}
+              />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.toggle} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ml-auto ${styles.nav}`}>
             <Nav.Link as={Link} href="/" className={styles.navLink}>
-              HOME
+              Home
             </Nav.Link>
             <Nav.Link as={Link} href="/products" className={styles.navLink}>
-              SEARCH
+              Search
               <Image
                 alt="search"
                 title="Search a Product"
@@ -30,7 +37,7 @@ function NavBar() {
               />
             </Nav.Link>
             <Nav.Link as={Link} href="/cart" className={styles.navLink}>
-              CARD
+              Card
               <Image
                 alt="shopping-cart"
                 title="Go to Shopping Cart"

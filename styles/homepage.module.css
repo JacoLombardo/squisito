@@ -2,12 +2,15 @@
   font-size: 60px;
   text-align: center;
   font-family: "poppins";
+  margin-left: 100px;
+  margin-right: 50px;
+  max-width: 1200px;
+  text-align: left;
 }
 
 @font-face {
   font-family: "poppins";
-  src: local("poppins"),
-    url("Poppins-Regular.ttf");
+  src: local("poppins"), url("Poppins-Regular.ttf");
 }
 
 .navbar-divider {
@@ -26,5 +29,37 @@
 
 .nav-link:hover {
   transform: scale(1.1);
-  color: red; 
+  color: red;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  width: 425px;
+  height: 425px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  margin: 10px;
+  animation: slideIn 1.8s;
+}
+
+.cardBig {
+  width: 425px;
+  height: 425px;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(90%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
