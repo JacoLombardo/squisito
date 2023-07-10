@@ -28,6 +28,8 @@
   flex-wrap: wrap;
 }
 
+/* PRODUCT CARD */
+
 .product_card {
   display: flex;
   flex-direction: column;
@@ -119,3 +121,4 @@
 .instock {
   font-size: 10px;
 }
+
