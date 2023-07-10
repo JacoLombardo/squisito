@@ -5,4 +5,39 @@
 }
 
 .products_div {
+  display: flex;
+  align-items: flex-start;
+}
+
+.product_card {
+  display: flex;
+  margin: 10px;
+  width: 200px;
+  height: 480px;
+}
+
+.product_img_div {
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  /* position: relative; */
+}
+
+.product_img {
+  height: auto;
+  max-height: 200px;
+  width: auto;
+  max-width: 200px;
+}
+
+.product_footer {
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 200px;
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
 }

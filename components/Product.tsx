@@ -6,6 +6,7 @@ import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import Counter from "./Counter";
 import { CartContext } from "@/contexts/CartContext";
+import styles from "@/styles/product.module.css";
 
 interface Props {
   product: Product;
@@ -57,13 +58,20 @@ export default function ProductCard({ product, variants }: Props) {
   }, [actualVariant]);
   return (
     <>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={actualVariant.image} />
+      <Card className={styles.product_card}>
+        <div className={styles.product_img_div}>
+          <Card.Img
+            variant="top"
+            src={actualVariant.image}
+            className={styles.product_img}
+          />
+        </div>
         <Card.Header>
           {colorVariants.map((variant: Product, index: number) => {
             return (
               <a
                 key={index}
+                style={{ cursor: "pointer" }}
                 onClick={() => {
                   setActualVariant(variant);
                 }}
@@ -83,14 +91,9 @@ export default function ProductCard({ product, variants }: Props) {
           <Card.Title>{actualVariant.name}</Card.Title>
           <Card.Subtitle>{actualVariant.price},00€</Card.Subtitle>
           <p>IN STOCK</p>
-          <p>Color: {actualVariant.color}</p>
-          <Card.Text>{actualVariant.description}</Card.Text>
-
-          <Card.Footer
-            style={{
-              display: "flex",
-            }}
-          >
+          {/* <p>Color: {actualVariant.color}</p> */}
+          {/* <Card.Text>{actualVariant.description}</Card.Text> */}
+          <Card.Footer className={styles.product_footer}>
             <Counter
               counter={counter}
               setCounter={setCounter}
