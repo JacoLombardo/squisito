@@ -4,7 +4,7 @@
 } */
 
 .navbar {
-  background-color: #ffffff;
+  background-color: white;
 }
 
 .brandText {
@@ -18,13 +18,24 @@
 
 .toggle {
   border-color: white;
+  border-color: none;
   border-radius: 0;
   height: 1px;
-  color: black;
+}
+
+.card_body {
+  height: 350px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card_body:hover {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease-in-out;
 }
 
 .toggle-icon-bar {
   background-color: white;
+  border-color: none;
 }
 
 .toggle.collapsed .toggle-icon-bar:last-child {
@@ -66,6 +77,7 @@
   border: none;
   border-radius: 10px;
   background-color: white;
+  border-color: none;
   color: black;
   cursor: pointer;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,11 +89,12 @@
 }
 
 .card_body {
-  background-color: #f1f1f1;
+  background-color: white;
   display: flex;
   align-items: center;
 }
 
 .counter_output {
-  background-color: #f1f1f1;;
+  background-color: white;
+  border-color: none;
 }

@@ -4,7 +4,6 @@ import ProductCard from "@/components/Product";
 import { Product } from "@/types";
 import { useContext, useEffect, useState } from "react";
 import styles from "@/styles/product.module.css";
-import { Button } from "react-bootstrap";
 import { CartContext } from "@/contexts/CartContext";
 
 export default function Products() {

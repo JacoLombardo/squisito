@@ -10,7 +10,7 @@ function NavBar() {
     <Navbar expand="lg" className={styles.navbar}>
       <Container>
         <Navbar.Brand href="#home">
-          <span className={styles.brandText}>Saporito</span>
+          <span className={styles.brandText}>X</span>
           {/* <Image
                 alt="search"
                 title="Search a Product"
