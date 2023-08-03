@@ -1,4 +1,4 @@
-import { CartItem } from "@/types";
+import { CartItem, Product } from "@/types";
 import {
   Dispatch,
   ReactNode,
@@ -16,6 +16,8 @@ export type CartContextValue = {
   shipping: number;
   setShipping: Dispatch<SetStateAction<number>>;
   calculateShipping: Function;
+  AddToCartContext: Function;
+  ModifyOrderContext: Function;
 };
 const initialFileContext: CartContextValue = {
   cart: [],
@@ -26,6 +28,8 @@ const initialFileContext: CartContextValue = {
   shipping: 0,
   setShipping: () => {},
   calculateShipping: () => {},
+  AddToCartContext: () => {},
+  ModifyOrderContext: () => {},
 };
 
 // ** Create Context
@@ -55,6 +59,27 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     calculateShipping(tot);
   };
 
+  const AddToCartContext = (actualVariant: Product, counter: number) => {
+    cart.push({
+      number: counter,
+      item: actualVariant,
+    });
+  };
+
+  const ModifyOrderContext = (actualVariant: Product, counter: number) => {
+    if (counter > 0) {
+      cart.filter(
+        (item) => item.item.internal_id === actualVariant.internal_id
+      )[0].number = counter;
+    } else if (counter === 0) {
+      setCart((current) =>
+        current.filter((item) => {
+          return item.item.internal_id !== actualVariant.internal_id;
+        })
+      );
+    }
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -66,6 +91,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         shipping,
         setShipping,
         calculateShipping,
+        AddToCartContext,
+        ModifyOrderContext,
       }}
     >
       {children}

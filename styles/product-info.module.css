@@ -15,3 +15,29 @@
   display: flex;
   flex-direction: column;
 }
+
+.product_info_counter {
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.product_info_colors {
+  display: flex;
+  background-color: white;
+}
+
+.product_info_colors a {
+  display: inline-block;
+  margin-right: 2px;
+  padding: 1px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product_info_colors a img {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
