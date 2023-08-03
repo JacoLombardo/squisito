@@ -89,12 +89,14 @@ return (
             </a>
           ))}
         </Card.Header>
-        <Card.Body className={styles.card_body}>
+          <div className={styles.titleContainer}>
           <Card.Title>{actualVariant.name}</Card.Title>
           <Card.Subtitle>{actualVariant.price},00€</Card.Subtitle>
-          <p className={styles.instock}>IN STOCK</p>
+      <p className={styles.instock}>IN STOCK</p>
+      </div>
           {/* <p>Color: {actualVariant.color}</p> */}
-          {/* <Card.Text>{actualVariant.description}</Card.Text> */}
+      {/* <Card.Text>{actualVariant.description}</Card.Text> */}
+      <Card.Body className={styles.card_body}>
             <Counter
               counter={counter}
               setCounter={setCounter}
