@@ -4,7 +4,7 @@ import { Product } from "@/types";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import styles from "@/styles/product.module.css";
+import styles from "@/styles/product-info.module.css";
 
 export default function ProductInfo() {
   const [product, setProduct] = useState<Product | undefined>(undefined);
