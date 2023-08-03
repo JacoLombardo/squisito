@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import NavBar from "@/components/NavBar";
 import { Product } from "@/types";
 import { useContext, useEffect, useState } from "react";
@@ -6,7 +7,6 @@ import Image from "next/image";
 import styles from "@/styles/product-info.module.css";
 import { CartContext } from "@/contexts/CartContext";
 import Counter from "@/components/Counter";
-import { Button } from "react-bootstrap";
 import { ProductContext } from "@/contexts/ProductContext";
 
 export default function ProductInfo() {
@@ -17,8 +17,7 @@ export default function ProductInfo() {
   const [counter, setCounter] = useState<number>(1);
   const router = useRouter();
 
-  const { cart, AddToCartContext, ModifyOrderContext } =
-    useContext(CartContext);
+  const { cart } = useContext(CartContext);
   const { products, getProducts, getColorVariants, getVariants } =
     useContext(ProductContext);
 
@@ -37,49 +36,6 @@ export default function ProductInfo() {
       .catch((error) => {
         console.log("error", error);
       });
-  };
-
-  // const AddToCart = () => {
-  //   if (actualVariant) {
-  //     if (inCart) {
-  //       if (counter > 0) {
-  //         cart.filter(
-  //           (item) => item.item.internal_id === actualVariant.internal_id
-  //         )[0].number = counter;
-  //       } else if (counter === 0) {
-  //         setCart((current) =>
-  //           current.filter((item) => {
-  //             return item.item.internal_id !== actualVariant.internal_id;
-  //           })
-  //         );
-  //         setInCart(false);
-  //         setCounter(1);
-  //       }
-  //     } else {
-  //       cart.push({
-  //         number: counter,
-  //         item: actualVariant,
-  //       });
-  //       setInCart(true);
-  //     }
-  //   }
-  // };
-
-  const AddToCart = () => {
-    if (actualVariant) {
-      AddToCartContext(actualVariant, counter);
-      setInCart(true);
-    }
-  };
-
-  const ModifyOrder = () => {
-    if (actualVariant && counter === 0) {
-      ModifyOrderContext(actualVariant, counter);
-      setInCart(false);
-      setCounter(1);
-    } else if (actualVariant) {
-      ModifyOrderContext(actualVariant, counter);
-    }
   };
 
   useEffect(() => {
@@ -150,30 +106,13 @@ export default function ProductInfo() {
             <p>{product.description}</p>
             <div className={styles.product_info_counter}>
               <Counter
+                actualVariant={actualVariant}
                 counter={counter}
                 setCounter={setCounter}
                 inCart={inCart}
                 setInCart={setInCart}
+                page="product"
               />
-
-              {inCart ? (
-                <Button
-                  variant="primary"
-                  className={styles.product_button}
-                  // onClick={AddToCart}
-                  onClick={ModifyOrder}
-                >
-                  Modify Order
-                </Button>
-              ) : (
-                <Button
-                  variant="primary"
-                  className={styles.product_button}
-                  onClick={AddToCart}
-                >
-                  Add to Cart
-                </Button>
-              )}
             </div>
           </div>
         </div>
