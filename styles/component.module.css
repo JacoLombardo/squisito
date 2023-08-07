@@ -85,7 +85,8 @@
 }
 
 .product_button:hover {
-  background-color: red;
+  background-color: black;
+  color: white;
 }
 
 .card_body {

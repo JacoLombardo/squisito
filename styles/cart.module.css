@@ -5,12 +5,13 @@
 }
 
 .shopping_cart {
-  max-width: 600px;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
+  font-family: "poppins";
 }
 
 .item_list {
@@ -41,18 +42,43 @@
   max-width: 100px;
   height: 90%;
 }
-.counter_div {
+/* .counter_div {
   position: absolute;
   margin-left: 350px;
-}
+} */
 
 .total_div {
+  background-color: #f1f1f1;
+  width: 300px;
+  padding: 10px;
   text-align: right;
+  float: right;
+  border-radius: 10px;
+}
+
+.total_div > div {
+  display: flex;
+  justify-content: space-between;
 }
 
 .remove_item {
-  color: red;
-  font-size: small;
+  color: black;
+  text-decoration: none;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: -10px;
+  position: absolute;
+  top: -50px;
+}
+
+.checkout_button {
+  width: 300px;
+  margin-left: -10px;
+  margin-bottom: -10px;
+  background-color: black;
+  font-size: larger;
+  font-weight: 600;
+}
+
+.checkout_button:hover {
+  background-color: grey;
 }

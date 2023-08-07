@@ -120,17 +120,3 @@ export default function ProductInfo() {
     </>
   );
 }
-
-// export async function getServerSideProps() {
-//   try {
-//     const product: Product | undefined = await getProductById();
-//     // const stringList: string = JSON.stringify(list);
-//     return {
-//       props: {
-//         product,
-//       },
-//     };
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }

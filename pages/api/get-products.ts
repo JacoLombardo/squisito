@@ -1,13 +1,11 @@
 import clientPromise from "../../lib/mongodb";
 
-export default async function getProducts(_req: any, res: any) {
+export default async function getProducts() {
   try {
     const client = await clientPromise;
     const db = client.db("fakeShop");
-
     const products = await db.collection("products").find({}).toArray();
-
-    res.json(products);
+    return products;
   } catch (e) {
     console.error(e);
   }

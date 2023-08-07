@@ -96,6 +96,7 @@ export default function Counter({
             {inCart ? (
               <Button
                 variant="primary"
+                style={{ backgroundColor: "black", color: "white" }}
                 className={styles.product_button}
                 onClick={ModifyOrder}
               >

@@ -2,22 +2,19 @@
 import NavBar from "@/components/NavBar";
 import ProductCard from "@/components/Product";
 import { Product } from "@/types";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import styles from "@/styles/product.module.css";
 import { ProductContext } from "@/contexts/ProductContext";
+import getProducts from "./api/get-products";
 
-export default function Products() {
-  const [show, setShow] = useState<boolean>(false);
-  const { products, getProducts, getVariants } = useContext(ProductContext);
+export default function Products({
+  stringProducts,
+}: {
+  stringProducts: string;
+}) {
+  const { getVariants } = useContext(ProductContext);
+  const products = JSON.parse(stringProducts);
 
-  useEffect(() => {
-    try {
-      getProducts();
-      setShow(true);
-    } catch (error) {
-      setShow(false);
-    }
-  }, []);
   return (
     <>
       <NavBar />
@@ -25,19 +22,32 @@ export default function Products() {
         <p className={styles.title}>Products</p>
       </div>
       <div className={styles.products_div}>
-        {show &&
-          products
-            ?.filter((product) => product.type.includes("main"))
-            .map((product: Product, index: number) => {
-              return (
-                <ProductCard
-                  key={index}
-                  product={product}
-                  variants={getVariants(products, product)}
-                />
-              );
-            })}
+        {products
+          ?.filter((product: any) => product.type.includes("main"))
+          .map((product: Product, index: number) => {
+            return (
+              <ProductCard
+                key={index}
+                product={product}
+                variants={getVariants(products, product)}
+              />
+            );
+          })}
       </div>
     </>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+    const products = await getProducts();
+    const stringProducts: string = JSON.stringify(products);
+    return {
+      props: {
+        stringProducts,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+  }
 }
