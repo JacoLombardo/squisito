@@ -1,5 +1,6 @@
 import NavBar from "@/components/NavBar";
 import styles from "@/styles/homepage.module.css";
+// import CustomAccordion from "@/components/Accordion";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           </span>
         </div>
       </div>
+      {/* <CustomAccordion /> */}
     </>
   );
 }
