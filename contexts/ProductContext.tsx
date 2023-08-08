@@ -1,4 +1,4 @@
-import { CartItem, Product } from "@/types";
+import { Product } from "@/types";
 import {
   Dispatch,
   ReactNode,

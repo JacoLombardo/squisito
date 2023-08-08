@@ -2,18 +2,23 @@
 import NavBar from "@/components/NavBar";
 import ProductCard from "@/components/Product";
 import { Product } from "@/types";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "@/styles/product.module.css";
 import { ProductContext } from "@/contexts/ProductContext";
-import getProducts from "./api/get-products";
+// import getProducts from "./api/get-products";
 
-export default function Products({
-  stringProducts,
-}: {
-  stringProducts: string;
-}) {
-  const { getVariants } = useContext(ProductContext);
-  const products = JSON.parse(stringProducts);
+export default function Products() {
+  //   {
+  //   stringProducts,
+  // }: {
+  //   stringProducts: string;
+  //   }
+  const { products, getProducts, getVariants } = useContext(ProductContext);
+  // const products = JSON.parse(stringProducts);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
     <>
@@ -38,16 +43,16 @@ export default function Products({
   );
 }
 
-export async function getServerSideProps() {
-  try {
-    const products = await getProducts();
-    const stringProducts: string = JSON.stringify(products);
-    return {
-      props: {
-        stringProducts,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-  }
-}
+// export async function getServerSideProps() {
+//   try {
+//     const products = await getProducts();
+//     const stringProducts: string = JSON.stringify(products);
+//     return {
+//       props: {
+//         stringProducts,
+//       },
+//     };
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
