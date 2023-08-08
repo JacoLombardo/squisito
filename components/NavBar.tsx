@@ -9,7 +9,7 @@ function NavBar() {
   return (
     <Navbar expand="lg" className={styles.navbar}>
       <Container>
-        <Navbar.Brand href="#home">
+        <Navbar.Brand as={Link} href="/">
           <span className={styles.brandText}>Squisito.</span>
           {/* <Image
                 alt="search"
@@ -20,7 +20,10 @@ function NavBar() {
                 className={`${styles.cartLogo}`}
               /> */}
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.toggle} />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className={styles.toggle}
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ml-auto ${styles.nav}`}>
             <Nav.Link as={Link} href="/" className={styles.navLink}>
