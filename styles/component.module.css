@@ -12,7 +12,7 @@
 }
 
 @font-face {
-  font-family: 'poppins';
+  font-family: "poppins";
   src: url(Poppins-Regular.ttf);
 }
 
@@ -48,7 +48,7 @@
 }
 
 .navLink {
-  font-family: 'poppins';
+  font-family: "poppins";
   font-size: 20px;
   color: #000;
   margin-left: 15px;
@@ -85,7 +85,8 @@
 }
 
 .product_button:hover {
-  background-color: red;
+  background-color: black;
+  color: white;
 }
 
 .card_body {
@@ -383,4 +384,9 @@
   width: 20px;
   height: 28px;
   flex-direction: column;
+}
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

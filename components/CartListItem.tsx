@@ -3,7 +3,7 @@ import styles from "@/styles/cart.module.css";
 import { CartItem } from "@/types";
 import Image from "next/image";
 import { useContext, useState } from "react";
-import { Button } from "react-bootstrap";
+import Counter from "./Counter";
 
 interface Props {
   item: CartItem;
@@ -13,24 +13,6 @@ interface Props {
 export default function CartListItem({ item, calculateTotal }: Props) {
   const [counter, setCounter] = useState<number>(item.number);
   const { cart, setCart } = useContext(CartContext);
-
-  const increase = () => {
-    setCounter((count: number) => count + 1);
-    cart.filter(
-      (cartItem) => cartItem.item.internal_id === item.item.internal_id
-    )[0].number = counter + 1;
-    calculateTotal(cart);
-  };
-
-  const decrease = () => {
-    if (counter > 1) {
-      setCounter((count: number) => count - 1);
-      cart.filter(
-        (cartItem) => cartItem.item.internal_id === item.item.internal_id
-      )[0].number = counter - 1;
-      calculateTotal(cart);
-    }
-  };
 
   const moltiplicate = (itemCost: number, numberItems: number) => {
     return itemCost * numberItems;
@@ -51,6 +33,14 @@ export default function CartListItem({ item, calculateTotal }: Props) {
   return (
     <>
       <div className={styles.cart_item}>
+        <div className={styles.counter_div}>
+          <Counter
+            counter={counter}
+            setCounter={setCounter}
+            page="cart"
+            item={item}
+          />
+        </div>
         <div className={styles.cart_item_info}>
           <div className={styles.cart_image_div}>
             <Image
@@ -66,24 +56,17 @@ export default function CartListItem({ item, calculateTotal }: Props) {
           <p>
             {item.item.name}&nbsp;{item.item.color}
           </p>
-          <div className={styles.counter_div}>
-            <Button variant="primary" onClick={decrease}>
-              -
-            </Button>
-            <span className={styles.counter_output}>{counter}</span>
-            <Button variant="primary" onClick={increase}>
-              +
-            </Button>
-            <a onClick={removeItem} className={styles.remove_item}>
-              Remove item
-            </a>
-          </div>
         </div>
-
         <p style={{ textAlign: "right" }}>
           {moltiplicate(item.item.price, item.number)},00€
         </p>
+        <div style={{ position: "relative" }}>
+          <a onClick={removeItem} className={styles.remove_item}>
+            X
+          </a>
+        </div>
       </div>
+      <hr />
     </>
   );
 }

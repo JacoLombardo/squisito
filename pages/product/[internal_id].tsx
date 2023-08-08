@@ -1,26 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import NavBar from "@/components/NavBar";
-import getProductById from "../api/product-by-id";
 import { Product } from "@/types";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "@/styles/product-info.module.css";
+import { CartContext } from "@/contexts/CartContext";
+import Counter from "@/components/Counter";
+import { ProductContext } from "@/contexts/ProductContext";
 
 export default function ProductInfo() {
-  const [product, setProduct] = useState<Product | undefined>(undefined);
+  const [product, setProduct] = useState<Product>();
+  const [variants, setVariants] = useState<Object>();
+  const [actualVariant, setActualVariant] = useState<Product>();
+  const [inCart, setInCart] = useState<boolean>(false);
+  const [counter, setCounter] = useState<number>(1);
   const router = useRouter();
 
-  const getProductById = (internal_id: any) => {
-    console.log("ciao2");
+  const { cart } = useContext(CartContext);
+  const { products, getProducts, getColorVariants, getVariants } =
+    useContext(ProductContext);
+
+  const getProductById = (id: any) => {
     var requestOptions = {
       headers: new Headers(),
     };
 
-    fetch(`/api/product-by-id?id=${internal_id}`, requestOptions)
+    fetch(`/api/product-by-id?id=${id}`, requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
         setProduct(result);
+        setActualVariant(result);
+        setVariants(getVariants(products, result));
       })
       .catch((error) => {
         console.log("error", error);
@@ -28,29 +39,80 @@ export default function ProductInfo() {
   };
 
   useEffect(() => {
+    for (let i = 0; i < cart.length; i++) {
+      if (cart[i].item.internal_id === actualVariant?.internal_id) {
+        setCounter(cart[i].number);
+        setInCart(true);
+        break;
+      } else {
+        setCounter(1);
+        setInCart(false);
+      }
+    }
+  }, [actualVariant]);
+
+  useEffect(() => {
     const id = router.query.internal_id;
-    getProductById(id);
-  }, [router.query]);
+    if (products && id) {
+      getProductById(id);
+    }
+  }, [products]);
+
+  useEffect(() => {
+    getProducts();
+  }, []);
   return (
     <>
       <NavBar />
-      {product && (
-        <div>
-          <h1 style={{ textAlign: "center" }}>{product.name}</h1>
-          <div className={styles.product_info_div}>
-            <Image
-              alt={product.name}
-              title={product.name}
-              src={product.image}
-              width={0}
-              height={0}
-              className={styles.product_info_image}
-              sizes="100vw"
-            />
-            <div className={styles.product_info}>
-              <p>{product.price},00€</p>
-              <p>Color: {product.color}</p>
-              <p>{product.description}</p>
+      {products && product && (
+        <div className={styles.product_info_div}>
+          <Image
+            alt={product.name}
+            title={product.name}
+            src={actualVariant ? actualVariant.image : product.image}
+            width={0}
+            height={0}
+            className={styles.product_info_image}
+            sizes="100vw"
+          />
+          <div className={styles.product_info}>
+            <h1>{product.name}</h1>
+            <p>{product.price},00€</p>
+            <p className={styles.instock}>IN STOCK</p>
+
+            <div className={styles.product_info_colors}>
+              {variants &&
+                getColorVariants(variants).map(
+                  (variant: Product, index: number) => (
+                    <a
+                      key={index}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        setActualVariant(variant);
+                      }}
+                    >
+                      <Image
+                        alt={`${variant.color}`}
+                        title={`${variant.color}`}
+                        src={`/Images/Colors/${variant.color}.png`}
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  )
+                )}
+            </div>
+            <br />
+            <p>{product.description}</p>
+            <div className={styles.product_info_counter}>
+              <Counter
+                actualVariant={actualVariant}
+                counter={counter}
+                setCounter={setCounter}
+                inCart={inCart}
+                setInCart={setInCart}
+                page="product"
+              />
             </div>
           </div>
         </div>
@@ -58,17 +120,3 @@ export default function ProductInfo() {
     </>
   );
 }
-
-// export async function getServerSideProps() {
-//   try {
-//     const product: Product | undefined = await getProductById();
-//     // const stringList: string = JSON.stringify(list);
-//     return {
-//       props: {
-//         product,
-//       },
-//     };
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
