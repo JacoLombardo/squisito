@@ -41,12 +41,14 @@
   background-color: #f1f1f1;
   border-radius: 60px;
   margin: 15px;
+  align-items: center;
   animation: slideIn 1.8s;
 }
 
 .cardBig {
   width: 530px;
   height: 530px;
+  align-items: center;
 }
 
 @keyframes slideIn {
@@ -134,4 +136,24 @@
   flex-direction: column;
   opacity: 0;
   animation: slideUp 1s ease-out 2s forwards;
+}
+
+.exploreButton {
+  margin-top: 0px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: seashell;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+.exploreButton:hover {
+  padding: 10px 20px;
+  background-color: #e8faea;
+  color: black;
+  border: 0.3px solid black;
+  border-color: black;
+  border-radius: 60px;
+  cursor: pointer;
 }
