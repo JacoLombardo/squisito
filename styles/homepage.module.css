@@ -157,3 +157,20 @@
   border-radius: 60px;
   cursor: pointer;
 }
+
+/* Dark mode styles */
+.darkNavbar {
+  background-color: #333;
+  color: white;
+}
+
+/* Light mode styles */
+.lightNavbar {
+  background-color: white;
+  color: #333;
+}
+
+/* Dark/Light Mode Switch styles */
+.darkModeSwitch {
+  margin-right: 10px;
+}

@@ -1,25 +1,32 @@
+import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Form } from "react-bootstrap"; // Import Form component
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@/styles/component.module.css";
 
 function NavBar() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <Navbar expand="lg" className={styles.navbar}>
+    <Navbar expand="lg" className={`${styles.navbar} ${darkMode ? styles.darkNavbar : styles.lightNavbar}`}>
       <Container>
         <Navbar.Brand href="#home">
           <span className={styles.brandText}>Squisito.</span>
-          {/* <Image
-                alt="search"
-                title="Search a Product"
-                src="/Images/Navbar/logo.png"
-                width={120}
-                height={45}
-                className={`${styles.cartLogo}`}
-              /> */}
         </Navbar.Brand>
+        <Form.Check
+          type="switch"
+          id="darkModeSwitch"
+          checked={darkMode}
+          onChange={toggleDarkMode}
+          className={styles.darkModeSwitch}
+        />
         <Navbar.Toggle aria-controls="basic-navbar-nav" className={styles.toggle} />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ml-auto ${styles.nav}`}>
