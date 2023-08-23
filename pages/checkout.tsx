@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import styles from "@/styles/cart.module.css";
+import { CartContext } from "@/contexts/CartContext";
 
 export default function Checkout() {
   const [show, setShow] = useState<boolean>(true);
@@ -9,6 +10,7 @@ export default function Checkout() {
   const [firstName, setFirstName] = useState<string>("");
   const lastName = useRef<HTMLInputElement>(null);
   const email = useRef<HTMLInputElement>(null);
+  const { setCart } = useContext(CartContext);
 
   const proceed = () => {
     setError(false);
@@ -16,6 +18,7 @@ export default function Checkout() {
       setError(true);
     } else {
       setShow(false);
+      setCart([]);
     }
   };
 
