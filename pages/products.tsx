@@ -5,16 +5,9 @@ import { Product } from "@/types";
 import { useContext, useEffect } from "react";
 import styles from "@/styles/product.module.css";
 import { ProductContext } from "@/contexts/ProductContext";
-// import getProducts from "./api/get-products";
 
 export default function Products() {
-  //   {
-  //   stringProducts,
-  // }: {
-  //   stringProducts: string;
-  //   }
   const { products, getProducts, getVariants } = useContext(ProductContext);
-  // const products = JSON.parse(stringProducts);
 
   useEffect(() => {
     getProducts();
@@ -28,7 +21,7 @@ export default function Products() {
       </div>
       <div className={styles.products_div}>
         {products
-          ?.filter((product: any) => product.type.includes("main"))
+          ?.filter((product: Product) => product.type.includes("main"))
           .map((product: Product, index: number) => {
             return (
               <ProductCard
@@ -42,17 +35,3 @@ export default function Products() {
     </>
   );
 }
-
-// export async function getServerSideProps() {
-//   try {
-//     const products = await getProducts();
-//     const stringProducts: string = JSON.stringify(products);
-//     return {
-//       props: {
-//         stringProducts,
-//       },
-//     };
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }

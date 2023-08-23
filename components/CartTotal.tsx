@@ -1,5 +1,6 @@
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
+import { useRouter } from "next/router";
 import { useContext } from "react";
 import { Button } from "react-bootstrap";
 
@@ -9,6 +10,7 @@ interface Props {
 
 export default function CartTotal({ total }: Props) {
   const { shipping } = useContext(CartContext);
+  const router = useRouter();
   return (
     <>
       <div>
@@ -27,7 +29,14 @@ export default function CartTotal({ total }: Props) {
             {total !== 0 && <p>{total + shipping},00€</p>}
           </div>
           <br />
-          <Button className={styles.checkout_button}>Proceed to payment</Button>
+          <Button
+            className={styles.checkout_button}
+            onClick={() => {
+              router.push("/checkout");
+            }}
+          >
+            Proceed to checkout
+          </Button>
         </div>
       </div>
     </>
