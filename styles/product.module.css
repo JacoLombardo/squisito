@@ -23,7 +23,7 @@
 
 .card {
   width: 300px;
-  transition: ease all .3s;
+  transition: ease all 0.3s;
 }
 
 .card:hover {
@@ -40,28 +40,47 @@
 
 /* PRODUCT CARD */
 
+@media screen and (min-width: 550px) {
+  .product_card {
+    width: calc(25%);
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+  }
+  .product_card:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease-in-out;
+  }
+  .product_card:hover .product_img {
+    height: 1000px;
+    transform: scale(1.1) translateY(-10px);
+    transition: transform 0.3s ease-in-out;
+  }
+  .product_button {
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .product_card {
+    width: 300px;
+  }
+  .product_button {
+    font-size: 20px;
+  }
+}
+
 .product_card {
   display: flex;
   flex-direction: column;
   margin: 10px;
-  width: calc(25%);
-  max-width: 300px;
+  /* width: calc(25%);
+  max-width: 300px; */
   height: 400px;
   border-color: none;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.product_card:hover {
-  transform: translateY(-10px);
-  transition: transform 0.3s ease-in-out;
-}
-
-.product_card:hover .product_img {
-  height: 1000px;
-  transform: scale(1.1) translateY(-10px);
-  transition: transform 0.3s ease-in-out;
+  /* transition: transform 0.3s ease-in-out; */
 }
 
 .product_img_div {
@@ -107,7 +126,7 @@
 
 .product_button {
   font-family: "poppins";
-  font-size: 14px;
+  /* font-size: 14px; */
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
@@ -115,7 +134,7 @@
   color: black;
   cursor: pointer;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
 }
 
 .product_button:hover {
@@ -149,4 +168,3 @@
 .instock {
   font-size: 10px;
 }
-

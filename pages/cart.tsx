@@ -19,7 +19,13 @@ export default function ShoppingCart() {
       <NavBar />
       <p className={styles.title}>Shopping Cart</p>
       {cart.length === 0 ? (
-        <p>There are no items in the cart</p>
+        <div>
+          <br />
+          <br />
+          <p style={{ textAlign: "center", fontStyle: "oblique" }}>
+            There are no items in the cart.
+          </p>
+        </div>
       ) : (
         <div className={styles.shopping_cart}>
           <div className={styles.item_list}>
