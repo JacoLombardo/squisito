@@ -18,6 +18,11 @@
 
 .navbar {
   background-color: white;
+  border-bottom: 1px solid black;
+  border-radius: 0px 0px 50px 50px;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
 }
 
 .brandText {
