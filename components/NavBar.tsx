@@ -31,25 +31,9 @@ function NavBar() {
             </Nav.Link>
             <Nav.Link as={Link} href="/products" className={styles.navLink}>
               Search
-              <Image
-                alt="search"
-                title="Search a Product"
-                src="/Images/Icons/search.png"
-                width={25}
-                height={25}
-                className={`${styles.cartIcon}`}
-              />
             </Nav.Link>
             <Nav.Link as={Link} href="/cart" className={styles.navLink}>
               Cart
-              <Image
-                alt="shopping-cart"
-                title="Go to Shopping Cart"
-                src="/Images/Icons/shopping-cart.png"
-                width={25}
-                height={25}
-                className={`${styles.cartIcon}`}
-              />
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

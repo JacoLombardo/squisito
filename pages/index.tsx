@@ -5,8 +5,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Product } from "@/types";
 
-// import CustomAccordion from "@/components/Accordion";
-
 export default function Home() {
   const [selectedProducts, setSelectedProducts] = useState<Product[]>();
 
@@ -48,7 +46,7 @@ export default function Home() {
                 src={selectedProducts[0].image}
                 width={420}
                 height={420}
-                className={`${styles.cartLogo}`}
+                className={`${styles.cardLogo}`}
               />
             </Link>
             <button className={styles.exploreButton}>Explore Products</button>
@@ -110,7 +108,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      {/* <CustomAccordion /> */}
     </>
   );
 }
