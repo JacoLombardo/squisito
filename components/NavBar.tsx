@@ -30,7 +30,7 @@ function NavBar() {
               Home
             </Nav.Link>
             <Nav.Link as={Link} href="/products" className={styles.navLink}>
-              Search
+              Products
             </Nav.Link>
             <Nav.Link as={Link} href="/cart" className={styles.navLink}>
               Cart

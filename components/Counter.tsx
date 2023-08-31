@@ -1,6 +1,8 @@
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/component.module.css";
 import { CartItem, Product } from "@/types";
+import Image from "next/image";
+import Link from "next/link";
 import { Dispatch, SetStateAction, useContext } from "react";
 import { Button } from "react-bootstrap";
 
@@ -112,6 +114,17 @@ export default function Counter({
               </Button>
             )}
           </div>
+        )}
+        {inCart && (
+          <Link href={`/cart`}>
+            <Image
+              alt={`shopping cart`}
+              title={`Go to the shopping cart`}
+              src={`/Images/Icons/shopping-cart.png`}
+              width={25}
+              height={25}
+            />
+          </Link>
         )}
       </div>
     </>

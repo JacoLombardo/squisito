@@ -103,7 +103,8 @@ export default function ProductInfo() {
                 )}
             </div>
             <br />
-            <p>{product.description}</p>
+            <p>{product.description[0]}</p>
+            <p>{product.description[1]}</p>
             <div className={styles.product_info_counter}>
               <Counter
                 actualVariant={actualVariant}

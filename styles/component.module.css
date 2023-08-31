@@ -16,6 +16,14 @@
   max-width: 100%;
 }
 
+.counter {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .brandText {
   font-size: 40px;
 }
