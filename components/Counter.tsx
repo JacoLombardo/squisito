@@ -1,22 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/component.module.css";
 import { CartItem, Product } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { useContext, useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 
 interface Props {
   actualVariant?: Product;
-  inCart?: boolean;
-  setInCart?: Dispatch<SetStateAction<boolean>>;
   page: string;
   item?: CartItem;
 }
@@ -25,10 +17,10 @@ export default function Counter({ actualVariant, page, item }: Props) {
   const { cart, AddToCartContext, ModifyOrderContext, calculateTotal } =
     useContext(CartContext);
 
-  const [showAdd, setShowAdd] = useState(false);
-  const [showRemove, setShowRemove] = useState(false);
-  const [spin, setSpin] = useState(false);
-  const [reverse, setReverse] = useState(false);
+  const [showAdd, setShowAdd] = useState<boolean>(false);
+  const [showRemove, setShowRemove] = useState<boolean>(false);
+  const [spin, setSpin] = useState<boolean>(false);
+  const [reverse, setReverse] = useState<boolean>(false);
   const [counter, setCounter] = useState<number>(1);
   const [inCart, setInCart] = useState<boolean>(false);
 
@@ -39,16 +31,6 @@ export default function Counter({ actualVariant, page, item }: Props) {
       setSpin(true);
       AddToCartContext(actualVariant, counter);
       setInCart(true);
-    }
-  };
-
-  const ModifyOrder = () => {
-    if (actualVariant && counter === 0 && setInCart) {
-      ModifyOrderContext(actualVariant, counter);
-      setInCart(false);
-      setCounter(1);
-    } else if (actualVariant) {
-      ModifyOrderContext(actualVariant, counter);
     }
   };
 
@@ -93,34 +75,6 @@ export default function Counter({ actualVariant, page, item }: Props) {
       }
     }
   };
-
-  // const increase = () => {
-  //   if (page === "product") {
-  //     setCounter((count: number) => count + 1);
-  //   } else if (page === "cart" && item) {
-  //     setCounter((count: number) => count + 1);
-  //     cart.filter(
-  //       (cartItem) => cartItem.item.internal_id === item.item.internal_id
-  //     )[0].number = counter + 1;
-  //     calculateTotal(cart);
-  //   }
-  // };
-
-  // const decrease = () => {
-  //   if (page === "product") {
-  //     if (inCart && counter > 0) {
-  //       setCounter((count: number) => count - 1);
-  //     } else if (!inCart && counter > 1) {
-  //       setCounter((count: number) => count - 1);
-  //     }
-  //   } else if (page === "cart" && item) {
-  //     setCounter((count: number) => count - 1);
-  //     cart.filter(
-  //       (cartItem) => cartItem.item.internal_id === item.item.internal_id
-  //     )[0].number = counter - 1;
-  //     calculateTotal(cart);
-  //   }
-  // };
 
   useEffect(() => {
     if (actualVariant) {

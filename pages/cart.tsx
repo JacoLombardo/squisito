@@ -1,6 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import CartListItem from "@/components/CartListItem";
 import CartTotal from "@/components/CartTotal";
+import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
@@ -15,7 +16,7 @@ export default function ShoppingCart() {
   }, []);
 
   return (
-   <div style={{ backgroundColor: "#fefdf4" }}>
+    <div style={{ backgroundColor: "#fefdf4" }}>
       <NavBar />
       <p className={styles.title}>Your Shopping Cart</p>
       {cart.length === 0 ? (
@@ -34,18 +35,13 @@ export default function ShoppingCart() {
               cart
                 .sort((a, b) => a.item.internal_id - b.item.internal_id)
                 .map((item: CartItem, index: number) => {
-                  return (
-                    <CartListItem
-                      key={index}
-                      item={item}
-                      calculateTotal={calculateTotal}
-                    />
-                  );
+                  return <CartListItem key={index} item={item} />;
                 })}
           </div>
           <CartTotal total={total} />
         </div>
       )}
+      <Footer />
     </div>
   );
 }

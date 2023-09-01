@@ -7,11 +7,10 @@ import Counter from "./Counter";
 
 interface Props {
   item: CartItem;
-  calculateTotal: Function;
 }
 
-export default function CartListItem({ item, calculateTotal }: Props) {
-  const { cart, setCart } = useContext(CartContext);
+export default function CartListItem({ item }: Props) {
+  const { cart, setCart, calculateTotal } = useContext(CartContext);
 
   const moltiplicate = (itemCost: number, numberItems: number) => {
     return itemCost * numberItems;
