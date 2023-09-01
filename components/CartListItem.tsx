@@ -2,7 +2,7 @@ import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/cart.module.css";
 import { CartItem } from "@/types";
 import Image from "next/image";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Counter from "./Counter";
 
 interface Props {
@@ -11,7 +11,6 @@ interface Props {
 }
 
 export default function CartListItem({ item, calculateTotal }: Props) {
-  const [counter, setCounter] = useState<number>(item.number);
   const { cart, setCart } = useContext(CartContext);
 
   const moltiplicate = (itemCost: number, numberItems: number) => {
@@ -34,12 +33,7 @@ export default function CartListItem({ item, calculateTotal }: Props) {
     <>
       <div className={styles.cart_item}>
         <div className={styles.counter_div}>
-          <Counter
-            counter={counter}
-            setCounter={setCounter}
-            page="cart"
-            item={item}
-          />
+          <Counter page="cart" item={item} />
         </div>
         <div className={styles.cart_item_info}>
           <div className={styles.cart_image_div}>
@@ -61,7 +55,11 @@ export default function CartListItem({ item, calculateTotal }: Props) {
           {moltiplicate(item.item.price, item.number)},00€
         </p>
         <div style={{ position: "relative" }}>
-          <a onClick={removeItem} className={styles.remove_item}>
+          <a
+            onClick={removeItem}
+            className={styles.remove_item}
+            title="Remove from cart"
+          >
             X
           </a>
         </div>

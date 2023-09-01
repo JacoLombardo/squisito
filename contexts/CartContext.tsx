@@ -60,10 +60,17 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const AddToCartContext = (actualVariant: Product, counter: number) => {
-    cart.push({
-      number: counter,
-      item: actualVariant,
-    });
+    // cart.push({
+    //   number: counter,
+    //   item: actualVariant,
+    // });
+    setCart([
+      ...cart,
+      {
+        number: counter,
+        item: actualVariant,
+      },
+    ]);
   };
 
   const ModifyOrderContext = (actualVariant: Product, counter: number) => {

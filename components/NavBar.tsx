@@ -4,8 +4,11 @@ import Navbar from "react-bootstrap/Navbar";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "@/styles/component.module.css";
+import { useContext } from "react";
+import { CartContext } from "@/contexts/CartContext";
 
 function NavBar() {
+  const { cart } = useContext(CartContext);
   return (
     <Navbar expand="lg" className={styles.navbar}>
       <Container>
@@ -31,11 +34,21 @@ function NavBar() {
               Home
             </Nav.Link>
             <Nav.Link as={Link} href="/products" className={styles.navLink}>
-              Search
+              Products
             </Nav.Link>
-            <Nav.Link as={Link} href="/cart" className={styles.navLink}>
-              Cart
-            </Nav.Link>
+            {cart.length === 0 ? (
+              <Nav.Link
+                title="The cart is empty"
+                style={{ color: "grey" }}
+                className={styles.navLink}
+              >
+                Cart
+              </Nav.Link>
+            ) : (
+              <Nav.Link as={Link} href="/cart" className={styles.navLink}>
+                Cart
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

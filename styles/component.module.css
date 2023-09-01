@@ -16,8 +16,47 @@
   max-width: 100%;
 }
 
-.body {
-  background-color: #fefdf4;
+.counter {
+  position: absolute;
+  bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.counter_message {
+  position: absolute;
+  top: 6px;
+  left: 110px;
+  font-style: oblique;
+  width: 200px;
+  margin-left: 5px;
+}
+
+.counter_icon {
+  animation: spin 0.5s linear 1;
+}
+
+.counter_icon_reverse {
+  animation: spinreverse 0.5s linear 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinreverse {
+  100% {
+    transform: rotate(0deg);
+  }
+  0% {
+    transform: rotate(360deg);
+  }
 }
 
 .brandText {
@@ -75,6 +114,10 @@
   max-width: 100%;
 }
 
+.empty_cart_navLink {
+  color: grey;
+}
+
 .cartIcon {
   vertical-align: middle;
 }
@@ -100,7 +143,7 @@
 
 .product_button:hover {
   background-color: #e8faea;
-  color: black; 
+  color: black;
 }
 
 .product_button:active {
