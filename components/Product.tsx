@@ -1,10 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Product } from "@/types";
 import Image from "next/image";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Card } from "react-bootstrap";
 import Counter from "./Counter";
-import { CartContext } from "@/contexts/CartContext";
 import styles from "@/styles/product.module.css";
 import Link from "next/link";
 import { ProductContext } from "@/contexts/ProductContext";
@@ -16,24 +15,8 @@ interface Props {
 
 export default function ProductCard({ product, variants }: Props) {
   const [actualVariant, setActualVariant] = useState<Product>(product);
-  const [inCart, setInCart] = useState<boolean>(false);
-  const [counter, setCounter] = useState<number>(1);
-
-  const { cart } = useContext(CartContext);
   const { getColorVariants } = useContext(ProductContext);
 
-  useEffect(() => {
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].item.internal_id === actualVariant.internal_id) {
-        setCounter(cart[i].number);
-        setInCart(true);
-        break;
-      } else {
-        setCounter(1);
-        setInCart(false);
-      }
-    }
-  }, [actualVariant]);
   return (
     <>
       <Card className={styles.product_card}>
@@ -74,14 +57,7 @@ export default function ProductCard({ product, variants }: Props) {
           <p className={styles.instock}>IN STOCK</p>
         </div>
         <Card.Body className={styles.card_body}>
-          <Counter
-            actualVariant={actualVariant}
-            counter={counter}
-            setCounter={setCounter}
-            inCart={inCart}
-            setInCart={setInCart}
-            page="product"
-          />
+          <Counter actualVariant={actualVariant} page="product" />
         </Card.Body>
       </Card>
     </>
