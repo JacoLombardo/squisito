@@ -15,6 +15,10 @@
   src: local("poppins"), url("Poppins-Regular.ttf");
 }
 
+.body {
+  background-color: #fefdf4!important;
+}
+
 .title {
   font-size: 60px;
   text-align: left;
@@ -44,6 +48,7 @@
   align-items: center;
   animation: slideIn 1.8s;
 }
+
 
 .cardLogo {
   /* aspect-ratio: 1/1; */
@@ -205,11 +210,11 @@
     max-width: 100%;
   }
 
-  .arrow {
+  /* .arrow {
     margin-top: -128px;
     transform: rotate(-45deg);
     transition: transform 0.3s ease;
-  }
+  } */
 
   .loremIpsum {
     display: none;

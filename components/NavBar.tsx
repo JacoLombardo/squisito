@@ -13,15 +13,16 @@ function NavBar() {
     <Navbar expand="lg" className={styles.navbar}>
       <Container>
         <Navbar.Brand as={Link} href="/">
-          <span className={styles.brandText}>Squisito.</span>
-          {/* <Image
-                alt="search"
-                title="Search a Product"
-                src="/Images/Navbar/logo.png"
-                width={120}
-                height={45}
-                className={`${styles.cartLogo}`}
-              /> */}
+          <Image
+                alt="logo"
+                title="the logo"
+            src="/Images/Navbar/logo1.png"
+            width="0"
+            height="0"
+            sizes="100vw"
+            style={{width: "120px", height: "auto"}}
+                className={`${styles.Logo}`}
+              />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

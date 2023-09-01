@@ -26,7 +26,7 @@ export default function Home() {
     getProductsById(ids);
   }, []);
   return (
-    <>
+    <div style={{ backgroundColor: "#fefdf4" }}>
       <NavBar />
       {selectedProducts && (
         <div className={styles.cardContainer}>
@@ -108,6 +108,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </>
+    </div>
   );
 }

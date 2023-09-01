@@ -15,15 +15,15 @@ export default function ShoppingCart() {
   }, []);
 
   return (
-    <>
+   <div style={{ backgroundColor: "#fefdf4" }}>
       <NavBar />
-      <p className={styles.title}>Shopping Cart</p>
+      <p className={styles.title}>Your Shopping Cart</p>
       {cart.length === 0 ? (
         <div>
           <br />
           <br />
           <p style={{ textAlign: "center", fontStyle: "oblique" }}>
-            There are no items in the cart.
+            There are no items in the cart yet.
           </p>
         </div>
       ) : (
@@ -46,6 +46,6 @@ export default function ShoppingCart() {
           <CartTotal total={total} />
         </div>
       )}
-    </>
+    </div>
   );
 }
