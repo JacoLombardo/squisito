@@ -5,7 +5,6 @@ import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "@/styles/product-info.module.css";
-import { CartContext } from "@/contexts/CartContext";
 import Counter from "@/components/Counter";
 import { ProductContext } from "@/contexts/ProductContext";
 
@@ -13,11 +12,7 @@ export default function ProductInfo() {
   const [product, setProduct] = useState<Product>();
   const [variants, setVariants] = useState<Object>();
   const [actualVariant, setActualVariant] = useState<Product>();
-  const [inCart, setInCart] = useState<boolean>(false);
-  const [counter, setCounter] = useState<number>(1);
   const router = useRouter();
-
-  const { cart } = useContext(CartContext);
   const { products, getProducts, getColorVariants, getVariants } =
     useContext(ProductContext);
 
@@ -38,18 +33,18 @@ export default function ProductInfo() {
       });
   };
 
-  useEffect(() => {
-    for (let i = 0; i < cart.length; i++) {
-      if (cart[i].item.internal_id === actualVariant?.internal_id) {
-        setCounter(cart[i].number);
-        setInCart(true);
-        break;
-      } else {
-        setCounter(1);
-        setInCart(false);
-      }
-    }
-  }, [actualVariant]);
+  // useEffect(() => {
+  //   for (let i = 0; i < cart.length; i++) {
+  //     if (cart[i].item.internal_id === actualVariant?.internal_id) {
+  //       setCounter(cart[i].number);
+  //       setInCart(true);
+  //       break;
+  //     } else {
+  //       setCounter(1);
+  //       setInCart(false);
+  //     }
+  //   }
+  // }, [actualVariant]);
 
   useEffect(() => {
     const id = router.query.internal_id;
@@ -106,14 +101,7 @@ export default function ProductInfo() {
             <p>{product.description[0]}</p>
             <p>{product.description[1]}</p>
             <div className={styles.product_info_counter}>
-              <Counter
-                actualVariant={actualVariant}
-                counter={counter}
-                setCounter={setCounter}
-                inCart={inCart}
-                setInCart={setInCart}
-                page="product"
-              />
+              <Counter actualVariant={actualVariant} page="product" />
             </div>
           </div>
         </div>

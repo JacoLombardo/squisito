@@ -26,7 +26,7 @@ export default function Home() {
     getProductsById(ids);
   }, []);
   return (
-    <div style={{ backgroundColor: "#fefdf4" }}>
+    <div>
       <NavBar />
       {selectedProducts && (
         <div className={styles.cardContainer}>

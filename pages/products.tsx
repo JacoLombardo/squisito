@@ -14,7 +14,7 @@ export default function Products() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#fefdf4" }}>
+    <div>
       <NavBar />
       <div className={styles.titleContainer}>
         <p className={styles.title}>Products</p>

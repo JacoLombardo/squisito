@@ -16,7 +16,7 @@ export default function ShoppingCart() {
   }, []);
 
   return (
-    <div style={{ backgroundColor: "#fefdf4" }}>
+    <div>
       <NavBar />
       <p className={styles.title}>Your Shopping Cart</p>
       {cart.length === 0 ? (
