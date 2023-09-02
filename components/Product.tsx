@@ -28,7 +28,7 @@ export default function ProductCard({ product, variants }: Props) {
             />
           </div>
         </Link>
-        <Card.Header className={styles.product_header}>
+        <div className={styles.product_header}>
           {variants &&
             getColorVariants(variants).map(
               (variant: Product, index: number) => (
@@ -49,7 +49,7 @@ export default function ProductCard({ product, variants }: Props) {
                 </a>
               )
             )}
-        </Card.Header>
+        </div>
         <div className={styles.titleContainer}>
           <Card.Title>{actualVariant.name}</Card.Title>
           <Card.Subtitle>{actualVariant.price},00€</Card.Subtitle>
