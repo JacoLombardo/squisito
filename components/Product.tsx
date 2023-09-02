@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { Product } from "@/types";
 import Image from "next/image";
 import { useContext, useState } from "react";
@@ -54,9 +53,9 @@ export default function ProductCard({ product, variants }: Props) {
         <div className={styles.titleContainer}>
           <Card.Title>{actualVariant.name}</Card.Title>
           <Card.Subtitle>{actualVariant.price},00€</Card.Subtitle>
-          <p className={styles.instock}>IN STOCK</p>
+          <p>IN STOCK</p>
         </div>
-        <Card.Body className={styles.card_body}>
+        <Card.Body className={styles.product_card_body}>
           <Counter actualVariant={actualVariant} page="product" />
         </Card.Body>
       </Card>

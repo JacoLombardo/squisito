@@ -16,7 +16,16 @@
   font-family: "poppins";
 }
 
-.item_list {
+/* CART ITEM */
+
+@media (max-width: 768px) {
+  .cart_image {
+    display: none;
+  }
+
+  .cart_image_div {
+    display: none;
+  }
 }
 
 .cart_item {
@@ -43,10 +52,6 @@
   max-width: 100px;
   height: 90%;
 }
-/* .counter_div {
-  position: absolute;
-  margin-left: 350px;
-} */
 
 .total_div {
   padding: 50px;
@@ -68,6 +73,8 @@
   position: absolute;
   top: -50px;
 }
+
+/* CHECKOUT */
 
 .checkout_button {
   width: 300px;
@@ -102,22 +109,12 @@
   font-weight: 600;
 }
 
+/* THANKS VIEW */
+
 .thanks_div {
   text-align: center;
 }
 .thanks_div > p {
   margin-top: 20px;
   font-size: large;
-}
-
-@media (max-width: 768px) {
-  
-.cart_image {
-    display: none;
-  }
-
-.cart_image_div {
-  display: none;
-}
-
 }

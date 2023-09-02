@@ -10,19 +10,9 @@
   }
 }
 
-@font-face {
-  font-family: "poppins";
-  src: local("poppins"), url("Poppins-Regular.ttf");
-}
-
-.body {
-  background-color: #fefdf4!important;
-}
-
 .title {
   font-size: 60px;
   text-align: left;
-  font-family: "poppins";
   margin-right: 50px;
   max-width: 1200px;
 }
@@ -49,9 +39,7 @@
   animation: slideIn 1.8s;
 }
 
-
 .cardLogo {
-  /* aspect-ratio: 1/1; */
   max-width: 100%;
   height: auto;
 }

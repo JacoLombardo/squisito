@@ -108,7 +108,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
             <div>
               <Button
                 variant="primary"
-                className={styles.product_button}
+                className={styles.counter_button}
                 onClick={decrease}
               >
                 -
@@ -116,7 +116,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
               <span className={styles.counter_output}>{counter}</span>
               <Button
                 variant="primary"
-                className={styles.product_button}
+                className={styles.counter_button}
                 onClick={increase}
               >
                 +
@@ -126,7 +126,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
             <div>
               <Button
                 variant="primary"
-                className={styles.product_button}
+                className={styles.counter_button}
                 onClick={AddToCart}
               >
                 Add to Cart
@@ -168,7 +168,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
         >
           <Button
             variant="primary"
-            className={styles.product_button}
+            className={styles.counter_button}
             onClick={decrease}
           >
             -
@@ -176,7 +176,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
           <span className={styles.counter_output}>{counter}</span>
           <Button
             variant="primary"
-            className={styles.product_button}
+            className={styles.counter_button}
             onClick={increase}
           >
             +

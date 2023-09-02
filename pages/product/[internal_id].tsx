@@ -59,7 +59,7 @@ export default function ProductInfo() {
               className={styles.product_info_image}
               sizes="100vw"
             />
-            <div className={styles.product_info}>
+            <div>
               <h1>{product.name}</h1>
               <p>{product.price},00€</p>
               <p className={styles.instock}>IN STOCK</p>

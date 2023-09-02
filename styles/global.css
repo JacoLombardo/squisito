@@ -4,8 +4,20 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  font-family: "poppins";
+}
+
+@font-face {
+  font-family: "poppins";
+  src: url(Poppins-Regular.ttf);
+}
+
+@media (max-width: 768px) {
+  #content {
+    margin-bottom: 353px;
+  }
 }
 
 #content {
-  margin-bottom: 353px;
+  padding-bottom: 353px;
 }
