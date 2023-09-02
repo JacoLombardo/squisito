@@ -7,6 +7,7 @@ import Image from "next/image";
 import styles from "@/styles/product-info.module.css";
 import Counter from "@/components/Counter";
 import { ProductContext } from "@/contexts/ProductContext";
+import Footer from "@/components/Footer";
 
 export default function ProductInfo() {
   const [product, setProduct] = useState<Product>();
@@ -33,19 +34,6 @@ export default function ProductInfo() {
       });
   };
 
-  // useEffect(() => {
-  //   for (let i = 0; i < cart.length; i++) {
-  //     if (cart[i].item.internal_id === actualVariant?.internal_id) {
-  //       setCounter(cart[i].number);
-  //       setInCart(true);
-  //       break;
-  //     } else {
-  //       setCounter(1);
-  //       setInCart(false);
-  //     }
-  //   }
-  // }, [actualVariant]);
-
   useEffect(() => {
     const id = router.query.internal_id;
     if (products && id) {
@@ -60,52 +48,55 @@ export default function ProductInfo() {
     <>
       <NavBar />
       {products && product && (
-        <div className={styles.product_info_div}>
-          <Image
-            alt={product.name}
-            title={product.name}
-            src={actualVariant ? actualVariant.image : product.image}
-            width={0}
-            height={0}
-            className={styles.product_info_image}
-            sizes="100vw"
-          />
-          <div className={styles.product_info}>
-            <h1>{product.name}</h1>
-            <p>{product.price},00€</p>
-            <p className={styles.instock}>IN STOCK</p>
+        <div id="content">
+          <div className={styles.product_info_div}>
+            <Image
+              alt={product.name}
+              title={product.name}
+              src={actualVariant ? actualVariant.image : product.image}
+              width={0}
+              height={0}
+              className={styles.product_info_image}
+              sizes="100vw"
+            />
+            <div className={styles.product_info}>
+              <h1>{product.name}</h1>
+              <p>{product.price},00€</p>
+              <p className={styles.instock}>IN STOCK</p>
 
-            <div className={styles.product_info_colors}>
-              {variants &&
-                getColorVariants(variants).map(
-                  (variant: Product, index: number) => (
-                    <a
-                      key={index}
-                      style={{ cursor: "pointer" }}
-                      onClick={() => {
-                        setActualVariant(variant);
-                      }}
-                    >
-                      <Image
-                        alt={`${variant.color}`}
-                        title={`${variant.color}`}
-                        src={`/Images/Colors/${variant.color}.png`}
-                        width={25}
-                        height={25}
-                      />
-                    </a>
-                  )
-                )}
-            </div>
-            <br />
-            <p>{product.description[0]}</p>
-            <p>{product.description[1]}</p>
-            <div className={styles.product_info_counter}>
-              <Counter actualVariant={actualVariant} page="product" />
+              <div className={styles.product_info_colors}>
+                {variants &&
+                  getColorVariants(variants).map(
+                    (variant: Product, index: number) => (
+                      <a
+                        key={index}
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                          setActualVariant(variant);
+                        }}
+                      >
+                        <Image
+                          alt={`${variant.color}`}
+                          title={`${variant.color}`}
+                          src={`/Images/Colors/${variant.color}.png`}
+                          width={25}
+                          height={25}
+                        />
+                      </a>
+                    )
+                  )}
+              </div>
+              <br />
+              <p>{product.description[0]}</p>
+              <p>{product.description[1]}</p>
+              <div className={styles.product_info_counter}>
+                <Counter actualVariant={actualVariant} page="product" />
+              </div>
             </div>
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 }

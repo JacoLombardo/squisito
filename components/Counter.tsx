@@ -25,7 +25,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
   const [inCart, setInCart] = useState<boolean>(false);
 
   const AddToCart = () => {
-    if (actualVariant && setInCart) {
+    if (actualVariant) {
       setShowAdd(true);
       setTimeout(() => setShowAdd(false), 1000);
       setSpin(true);
@@ -41,7 +41,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
         (cartItem) => cartItem.item.internal_id === item.item.internal_id
       )[0].number = counter + 1;
       calculateTotal(cart);
-    } else if (actualVariant && setInCart) {
+    } else if (actualVariant) {
       setShowRemove(false);
       setShowAdd(true);
       setSpin(true);
@@ -62,7 +62,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
         (cartItem) => cartItem.item.internal_id === item.item.internal_id
       )[0].number = counter - 1;
       calculateTotal(cart);
-    } else if (actualVariant && setInCart) {
+    } else if (actualVariant) {
       setShowAdd(false);
       setShowRemove(true);
       setReverse(true);
@@ -71,7 +71,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
         ModifyOrderContext(actualVariant, counter - 1);
         setInCart(false);
       } else {
-        AddToCartContext(actualVariant, counter - 1);
+        ModifyOrderContext(actualVariant, counter - 1);
       }
     }
   };

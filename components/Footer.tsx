@@ -4,7 +4,14 @@ import React from "react";
 function Footer() {
   return (
     <>
-      <footer className="text-center text-lg-start bg-light text-muted">
+      <footer
+        style={{
+          position: "absolute",
+          bottom: "0px",
+          width: "100%",
+        }}
+        className="text-center text-lg-start bg-light text-muted"
+      >
         <section className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
           <div className="container text-center text-md-start mt-5">
             <div className="row mt-3">

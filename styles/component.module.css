@@ -27,10 +27,9 @@
 .counter_message {
   position: absolute;
   top: 6px;
-  left: 110px;
+  left: 141px;
   font-style: oblique;
   width: 200px;
-  margin-left: 5px;
 }
 
 .counter_icon {
