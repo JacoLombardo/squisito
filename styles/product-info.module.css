@@ -82,7 +82,11 @@
 }
 .product_info_colors {
   display: flex;
-  background-color: white;
+  background-color: none;
+}
+
+.product_info_colors a:hover {
+    background-color: red;
 }
 
 .product_info_colors a {
