@@ -6,7 +6,7 @@
 }
 
 .navbar {
-  background-color: #fefdf4;
+  background-color: none;
   max-width: 100%;
 }
 
@@ -20,14 +20,13 @@
 }
 
 .toggle {
-  border-color: white;
-  border-color: none;
+  border-color: transparent;
   border-radius: 0;
   height: 1px;
 }
 
 .navbar-toggler-icon {
-  background-color: black;
+  background-color: none;
 }
 
 .navbar-toggler-icon:before {

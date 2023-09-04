@@ -32,10 +32,11 @@
 .card {
   width: 355px;
   height: 355px;
-  background-color: #f1f1f1;
+  background-color: white;
   border-radius: 60px;
   margin: 15px;
   align-items: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   animation: slideIn 1.8s;
 }
 

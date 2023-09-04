@@ -16,7 +16,7 @@ function NavBar() {
           <Image
                 alt="logo"
                 title="the logo"
-            src="/Images/Navbar/logo1.png"
+            src="/Images/Navbar/logo2.png"
             width="0"
             height="0"
             sizes="100vw"
