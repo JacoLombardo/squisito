@@ -14,6 +14,8 @@ export type ProductContextValue = {
   getProducts: Function;
   getVariants: Function;
   getColorVariants: Function;
+  loader: boolean;
+  setLoader: Dispatch<SetStateAction<boolean>>;
 };
 const initialFileContext: ProductContextValue = {
   products: null,
@@ -22,6 +24,8 @@ const initialFileContext: ProductContextValue = {
   getProducts: () => {},
   getVariants: () => {},
   getColorVariants: () => {},
+  loader: true,
+  setLoader: () => {},
 };
 
 // ** Create Context
@@ -30,6 +34,7 @@ export const ProductContext =
 
 export const ProductProvider = ({ children }: { children: ReactNode }) => {
   const [products, setProducts] = useState<Product[] | null | void>(null);
+  const [loader, setLoader] = useState<boolean>(true);
 
   const filterProducts = (products: Product[]) => {
     const groupByCategory = products.reduce((group: any, product: Product) => {
@@ -50,6 +55,7 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
       .then((response) => response.json())
       .then((result) => {
         setProducts(result);
+        setLoader(false);
       })
       .catch((error) => {
         console.log("error", error);
@@ -77,6 +83,8 @@ export const ProductProvider = ({ children }: { children: ReactNode }) => {
         getProducts,
         getVariants,
         getColorVariants,
+        loader,
+        setLoader,
       }}
     >
       {children}

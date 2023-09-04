@@ -6,9 +6,11 @@ import { useContext, useEffect } from "react";
 import styles from "@/styles/product.module.css";
 import { ProductContext } from "@/contexts/ProductContext";
 import Footer from "@/components/Footer";
+import Loader from "@/components/Loader";
 
 export default function Products() {
-  const { products, getProducts, getVariants } = useContext(ProductContext);
+  const { products, getProducts, getVariants, loader } =
+    useContext(ProductContext);
 
   useEffect(() => {
     getProducts();
@@ -17,24 +19,28 @@ export default function Products() {
   return (
     <>
       <NavBar />
-      <div id="content">
-        <div className={styles.titleContainer}>
-          <p className={styles.title}>Products</p>
+      {loader ? (
+        <Loader />
+      ) : (
+        <div id="content">
+          <div className={styles.titleContainer}>
+            <p className={styles.title}>Products</p>
+          </div>
+          <div className={styles.products_div}>
+            {products
+              ?.filter((product: Product) => product.type.includes("main"))
+              .map((product: Product, index: number) => {
+                return (
+                  <ProductCard
+                    key={index}
+                    product={product}
+                    variants={getVariants(products, product)}
+                  />
+                );
+              })}
+          </div>
         </div>
-        <div className={styles.products_div}>
-          {products
-            ?.filter((product: Product) => product.type.includes("main"))
-            .map((product: Product, index: number) => {
-              return (
-                <ProductCard
-                  key={index}
-                  product={product}
-                  variants={getVariants(products, product)}
-                />
-              );
-            })}
-        </div>
-      </div>
+      )}
       <Footer />
     </>
   );
