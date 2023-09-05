@@ -109,17 +109,24 @@ export default function Counter({ actualVariant, page, item }: Props) {
           {inCart ? (
             <div>
               <Button
-                variant="primary"
-                className={styles.counter_button}
-                onClick={decrease}
-              >
-                -
-              </Button>
+  variant="primary"
+  className={styles.counter_button}
+  onClick={decrease}
+  style={{
+    backgroundColor: "white"
+  }}
+>
+  -
+</Button>
+
               <span className={styles.counter_output}>{counter}</span>
               <Button
                 variant="primary"
                 className={styles.counter_button}
                 onClick={increase}
+                style={{
+    backgroundColor: "white"
+  }}
               >
                 +
               </Button>
@@ -129,7 +136,10 @@ export default function Counter({ actualVariant, page, item }: Props) {
               <Button
                 variant="primary"
                 className={styles.counter_button}
-                onClick={AddToCart}
+                  onClick={AddToCart}
+                  style={{
+    backgroundColor: "white"
+  }}
               >
                 Add to Cart
               </Button>
@@ -157,9 +167,9 @@ export default function Counter({ actualVariant, page, item }: Props) {
               </div>
             </Link>
           )}
-          {showAdd && <p className={styles.counter_message}>Added to cart!</p>}
+          {showAdd && <p className={styles.counter_message}>Added to Cart</p>}
           {showRemove && (
-            <p className={styles.counter_message}>Removed from cart!</p>
+            <p className={styles.counter_message}>Removed from Cart</p>
           )}
         </div>
       )}
@@ -172,6 +182,9 @@ export default function Counter({ actualVariant, page, item }: Props) {
             variant="primary"
             className={styles.counter_button}
             onClick={decrease}
+            style={{
+            backgroundColor: "white"
+            }}
           >
             -
           </Button>
@@ -180,6 +193,9 @@ export default function Counter({ actualVariant, page, item }: Props) {
             variant="primary"
             className={styles.counter_button}
             onClick={increase}
+            style={{
+            backgroundColor: "white"
+            }}
           >
             +
           </Button>

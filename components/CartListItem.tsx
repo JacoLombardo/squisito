@@ -59,7 +59,7 @@ export default function CartListItem({ item }: Props) {
             className={styles.remove_item}
             title="Remove from cart"
           >
-            X
+            ✕
           </a>
         </div>
       </div>

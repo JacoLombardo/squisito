@@ -25,6 +25,40 @@
   flex-wrap: wrap;
 }
 
+.checkoutbutton_div { 
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+
+.centerContent {
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}
+
+.checkoutButton {
+  margin-top: 0px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: 0.3px solid black;
+  border-radius: 60px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.checkoutButton:hover {
+  padding: 10px 20px;
+  background-color: #e8faea;
+  color: black;
+  border: 0.3px solid black;
+  border-color: black;
+  border-radius: 60px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 
 /* PRODUCT CARD */
 
@@ -63,11 +97,16 @@
   flex-direction: column;
   margin: 10px;
   height: 400px;
-  border-radius: 5px;
+  padding-top: 20px;
+  border-radius: 20px;
   border-color: #e8faea;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+<<<<<<< Updated upstream
   transition: transform 0.3s ease-in-out
+=======
+  /* transition: transform 0.3s ease-in-out; */
+>>>>>>> Stashed changes
 }
 
 /* HEADER */

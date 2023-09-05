@@ -34,7 +34,7 @@
   display: block;
   width: 24px;
   height: 3px;
-  background-color: black;
+  background-color: transparent;
   margin-top: 5px;
 }
 
@@ -135,12 +135,14 @@
 }
 
 .counter_button:active {
-  background-color: mintcream;
+  background-color: transparent;
   color: black;
 }
 
 .counter_message {
   position: absolute;
+  font-size: 12px;
+  padding-left: 10px;
   top: 6px;
   left: 141px;
   font-style: oblique;

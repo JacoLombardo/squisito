@@ -31,11 +31,14 @@ export default function CartTotal({ total }: Props) {
           <br />
           <Button
             className={styles.checkout_button}
+            style={{
+            backgroundColor: "white"
+            }}
             onClick={() => {
               router.push("/checkout");
             }}
           >
-            Proceed to checkout
+            Proceed to Checkout
           </Button>
         </div>
       </div>
