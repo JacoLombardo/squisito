@@ -6,7 +6,11 @@ import { useContext, useEffect } from "react";
 import styles from "@/styles/product.module.css";
 import { ProductContext } from "@/contexts/ProductContext";
 import Footer from "@/components/Footer";
+<<<<<<< Updated upstream
 import Loader from "@/components/Loader";
+=======
+import Link from "next/link";
+>>>>>>> Stashed changes
 
 export default function Products() {
   const { products, getProducts, getVariants, loader } =
@@ -40,7 +44,29 @@ export default function Products() {
               })}
           </div>
         </div>
+<<<<<<< Updated upstream
       )}
+=======
+        <div className={styles.products_div}>
+          {products
+            ?.filter((product: Product) => product.type.includes("main"))
+            .map((product: Product, index: number) => {
+              return (
+                <ProductCard
+                  key={index}
+                  product={product}
+                  variants={getVariants(products, product)}
+                />
+              );
+            })}
+        </div>
+        <div className={`${styles.checkoutButton_div} ${styles.centerContent}`}>
+  <Link href="/cart">
+    <button className={styles.checkoutButton}>Checkout</button>
+  </Link>
+</div>
+      </div>
+>>>>>>> Stashed changes
       <Footer />
     </>
   );

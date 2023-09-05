@@ -1,3 +1,4 @@
+/* Shared Styles */
 @keyframes slideUp {
   0% {
     transform: translateY(100%);
@@ -10,17 +11,14 @@
   }
 }
 
+/* Default Styles */
 .title {
   font-size: 60px;
   text-align: left;
   margin-right: 50px;
   max-width: 1200px;
-}
-
-.titleContainer {
-  display: flex;
-  max-width: 1200px;
-  margin-left: 310px;
+  margin: auto;
+  padding-left: 40px;
 }
 
 .cardContainer {
@@ -32,7 +30,7 @@
 .card {
   width: 355px;
   height: 355px;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 60px;
   margin: 15px;
   align-items: center;
@@ -51,112 +49,43 @@
   align-items: center;
 }
 
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(90%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.arrow {
-  font-size: 20px;
-  display: inline-block;
-  transform: rotate(-45deg);
-  transition: transform 0.3s ease;
-}
-
-.titleContainer:hover .arrow,
-.discover:hover .arrow {
-  transform: rotate(0deg);
-}
-
-.discoverContainer {
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-end;
-  margin: auto;
-  margin-top: 10px;
-  position: relative;
-}
-
-.discoverContainer::before {
-  content: "";
-  flex-grow: 1;
-}
-
-.discoverContainer::after {
-  content: "";
-  display: inline-block;
-  margin-left: 100px;
-}
-
+/* Discover Styles */
 .discover {
   color: black;
   text-decoration: none;
   display: flex;
-  position: absolute;
-  margin-top: 120px;
-  margin-right: -90px;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .discoverText {
-  font-family: "poppins";
+  display: flex;
+  justify-content: center;
+  font-family: "Poppins";
   font-size: 20px;
-  margin-right: 100px;
 }
 
-@keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(90%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Lorem Ipsum Styles */
 .loremIpsum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #000;
   font-size: 25px;
   font-weight: 500;
   font-family: Poppins;
   position: absolute;
-  left: 880px;
+  left: 46%;
+  transform: translateX(-50%);
   top: 500px;
-  width: 700px;
+  width: 70%;
+  max-width: 700px;
   height: 97px;
-  flex-direction: column;
   opacity: 0;
   animation: slideUp 1s ease-out 2s forwards;
 }
 
-.exploreButton {
-  margin-top: 0px;
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  border: seashell;
-  border-radius: 60px;
-  cursor: pointer;
-}
-
-.exploreButton:hover {
-  padding: 10px 20px;
-  background-color: #e8faea;
-  color: black;
-  border: 0.3px solid black;
-  border-color: black;
-  border-radius: 60px;
-  cursor: pointer;
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
   .title {
     font-size: 40px;
@@ -164,7 +93,8 @@
 
   .titleContainer {
     flex-direction: column;
-    margin-left: 45px;
+    align-items: center;
+    margin-left: 0;
   }
 
   .cardContainer {
@@ -182,30 +112,29 @@
     padding-bottom: 20px;
   }
 
-  .discoverContainer {
-    flex-direction: column;
-    align-items: left;
-    padding-top: 150px;
-    max-width: 100%;
-  }
-
-  .discover {
-    max-width: 70%;
-  }
-
-  .discoverText {
-    margin-top: -115px;
-    font-weight: lighter;
-    max-width: 100%;
-  }
-
-  /* .arrow {
-    margin-top: -128px;
-    transform: rotate(-45deg);
-    transition: transform 0.3s ease;
-  } */
 
   .loremIpsum {
-    display: none;
+    font-size: 20px;
+    top: 300px;
+    width: 90%;
+    max-width: 100%;
+    animation: none;
   }
+}
+
+/* Explore Button Styles */
+.exploreButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: 0.3px solid black;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.exploreButton:hover {
+  background-color: #e8faea;
+  border-color: black;
 }
