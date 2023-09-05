@@ -59,9 +59,11 @@ export default function Home() {
                     className={`${styles.cardLogo}`}
                   />
                 </Link>
-                <button className={styles.exploreButton}>
-                  Explore Products
-                </button>
+                <Link href="/products">
+                  <button className={styles.exploreButton}>
+                    Explore Products
+                  </button>
+                </Link>
               </div>
               <div
                 className={styles.card}

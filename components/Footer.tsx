@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import styles from "@/styles/product.module.css";
+import styles from "@/styles/component.module.css";
 
 function Footer() {
   return (
@@ -68,16 +68,21 @@ function Footer() {
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
                 <p>
-  <a href="mailto:jacopo.lombardo@outlook.com" style={{ color: 'black', textDecoration: 'none' }}>
-    jacopo.lombardo@outlook.com
-  </a>
-</p>
-<p>
-  <a href="mailto:julianeschawert@gmail.com" style={{ color: 'black', textDecoration: 'none' }}>
-    julianeschawert@gmail.com
-  </a>
-</p>
-
+                  <a
+                    href="mailto:jacopo.lombardo@outlook.com"
+                    style={{ color: "black", textDecoration: "none" }}
+                  >
+                    jacopo.lombardo@outlook.com
+                  </a>
+                </p>
+                <p>
+                  <a
+                    href="mailto:julianeschawert@gmail.com"
+                    style={{ color: "black", textDecoration: "none" }}
+                  >
+                    julianeschawert@gmail.com
+                  </a>
+                </p>
               </div>
             </div>
           </div>
