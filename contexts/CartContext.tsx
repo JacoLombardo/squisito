@@ -18,6 +18,8 @@ export type CartContextValue = {
   calculateShipping: Function;
   AddToCartContext: Function;
   ModifyOrderContext: Function;
+  loader: boolean;
+  setLoader: Dispatch<SetStateAction<boolean>>;
 };
 const initialFileContext: CartContextValue = {
   cart: [],
@@ -30,6 +32,8 @@ const initialFileContext: CartContextValue = {
   calculateShipping: () => {},
   AddToCartContext: () => {},
   ModifyOrderContext: () => {},
+  loader: true,
+  setLoader: () => {},
 };
 
 // ** Create Context
@@ -39,6 +43,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [total, setTotal] = useState<number>(0);
   const [shipping, setShipping] = useState<number>(0);
+  const [loader, setLoader] = useState<boolean>(true);
 
   const calculateShipping = (total: number) => {
     if (total < 1000) {
@@ -57,13 +62,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     }
     setTotal(tot);
     calculateShipping(tot);
+    setLoader(false);
   };
 
   const AddToCartContext = (actualVariant: Product, counter: number) => {
-    // cart.push({
-    //   number: counter,
-    //   item: actualVariant,
-    // });
     setCart([
       ...cart,
       {
@@ -100,6 +102,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         calculateShipping,
         AddToCartContext,
         ModifyOrderContext,
+        loader,
+        setLoader,
       }}
     >
       {children}

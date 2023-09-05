@@ -50,6 +50,58 @@
   max-width: 100%;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 150px;
+  background-color: #f1f1f1;
+  color: black;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .tooltip .tooltiptext {
+    top: -5px;
+    left: 130%;
+  }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #f1f1f1 transparent transparent;
+  }
+}
+
+@media (min-width: 768px) {
+  .tooltip .tooltiptext {
+    top: 150%;
+    left: 20%;
+    margin-left: -60px;
+  }
+  .tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #f1f1f1 transparent;
+  }
+}
+
 /* COUNTER */
 
 .counter {
@@ -120,19 +172,17 @@
     transform: rotate(360deg);
   }
 }
-/* 
-.card_body {
-  height: 350px;
-  transition: transform 0.3s ease-in-out;
-  max-width: 100%;
+
+/* LOADER */
+
+.loader {
+  animation: spin 2s linear infinite;
+  border-radius: 50%;
 }
 
-.card_body:hover {
-  transform: translateY(-10px);
-  transition: transform 0.3s ease-in-out;
-  max-width: 100%;
-} */
-
-/* .cartIcon {
-  vertical-align: middle;
-} */
+.loader_div {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 100px;
+}
