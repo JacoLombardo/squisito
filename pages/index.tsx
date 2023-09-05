@@ -104,11 +104,6 @@ export default function Home() {
                     className={`${styles.cartLogo}`}
                   />
                 </Link>
-                <Link href="/products">
-                  <button className={styles.exploreButton}>
-                    Explore Products
-                  </button>
-                </Link>
               </div>
             </div>
           )}
