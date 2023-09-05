@@ -15,9 +15,10 @@ function NavBar() {
       <Container>
         <Navbar.Brand as={Link} href="/">
           <Image
-            alt="logo"
-            title="the logo"
-            src="/Images/Navbar/logo1.png"
+
+                alt="logo"
+                title="the logo"
+            src="/Images/Navbar/logo2.png"
             width="0"
             height="0"
             sizes="100vw"

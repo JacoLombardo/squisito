@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import styles from "@/styles/component.module.css";
 
 function Footer() {
   return (
@@ -20,7 +21,7 @@ function Footer() {
                   <Image
                     alt={`Jacopo's Github`}
                     title={`Jacopo's Github`}
-                    src={`/Images/Navbar/logo1.png`}
+                    src={`/Images/Navbar/logo2.png`}
                     width={0}
                     height={0}
                     sizes="100vw"
@@ -81,14 +82,13 @@ function Footer() {
         <div
           className="text-center p-4"
           style={{
-            backgroundColor: "rgba(0, 0, 0, 0.05)",
+            backgroundColor: "rgba(0, 0, 0, 0.01)",
             display: "flex",
             justifyContent: "center",
           }}
         >
-          © 2023 Copyright:{" "}
-          <p style={{ fontWeight: "bold" }}>
-            &nbsp; Jacopo Lombardo & Juliane Schawert
+          <p style={{ fontWeight: "light" }}>
+            © 2023 Jacopo Lombardo & Juliane Schawert
           </p>
         </div>
       </footer>

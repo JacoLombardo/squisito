@@ -65,6 +65,11 @@
   justify-content: space-between;
 }
 
+.goback {
+  color: black;
+  text-decoration: none;
+}
+
 .remove_item {
   color: black;
   text-decoration: none;
