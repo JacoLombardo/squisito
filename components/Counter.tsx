@@ -56,22 +56,24 @@ export default function Counter({ actualVariant, page, item }: Props) {
   };
 
   const decrease = () => {
-    setCounter((count: number) => count - 1);
-    if (item) {
-      cart.filter(
-        (cartItem) => cartItem.item.internal_id === item.item.internal_id
-      )[0].number = counter - 1;
-      calculateTotal(cart);
-    } else if (actualVariant) {
-      setShowAdd(false);
-      setShowRemove(true);
-      setReverse(true);
-      setTimeout(() => setShowRemove(false), 1000);
-      if (counter - 1 === 0) {
-        ModifyOrderContext(actualVariant, counter - 1);
-        setInCart(false);
-      } else {
-        ModifyOrderContext(actualVariant, counter - 1);
+    if (counter !== 0) {
+      setCounter((count: number) => count - 1);
+      if (item) {
+        cart.filter(
+          (cartItem) => cartItem.item.internal_id === item.item.internal_id
+        )[0].number = counter - 1;
+        calculateTotal(cart);
+      } else if (actualVariant) {
+        setShowAdd(false);
+        setShowRemove(true);
+        setReverse(true);
+        setTimeout(() => setShowRemove(false), 1000);
+        if (counter - 1 === 0) {
+          ModifyOrderContext(actualVariant, counter - 1);
+          setInCart(false);
+        } else {
+          ModifyOrderContext(actualVariant, counter - 1);
+        }
       }
     }
   };
