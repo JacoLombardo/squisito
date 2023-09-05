@@ -20,7 +20,6 @@ export default function ShoppingCart() {
   return (
     <>
       <NavBar />
-<<<<<<< Updated upstream
       {loader ? (
         <Loader />
       ) : (
@@ -48,36 +47,11 @@ export default function ShoppingCart() {
               <CartTotal total={total} />
             </div>
           )}
+          <Link className={styles.continueshopping} href="/products">
+            ← Continue Shopping
+          </Link>
         </div>
       )}
-=======
-      <div id="content">
-        <h1 className={styles.title}>Your Shopping Cart</h1>
-        {cart.length === 0 ? (
-          <div>
-            <br />
-            <br />
-            <p style={{ textAlign: "center", fontStyle: "oblique" }}>
-              There are no items in the cart yet.
-            </p>
-          </div>
-        ) : (
-          <div className={styles.shopping_cart}>
-            <div className={styles.item_list}>
-              <p>Items</p>
-              {cart &&
-                cart
-                  .sort((a, b) => a.item.internal_id - b.item.internal_id)
-                  .map((item: CartItem, index: number) => {
-                    return <CartListItem key={index} item={item} />;
-                  })}
-            </div>
-            <CartTotal total={total} />
-          </div>
-        )}
-        <Link className={styles.continueshopping} href="/products">← Continue Shopping</Link>
-        </div>
->>>>>>> Stashed changes
       <Footer />
     </>
   );

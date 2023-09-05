@@ -109,15 +109,15 @@ export default function Counter({ actualVariant, page, item }: Props) {
           {inCart ? (
             <div>
               <Button
-  variant="primary"
-  className={styles.counter_button}
-  onClick={decrease}
-  style={{
-    backgroundColor: "white"
-  }}
->
-  -
-</Button>
+                variant="primary"
+                className={styles.counter_button}
+                onClick={decrease}
+                style={{
+                  backgroundColor: "white",
+                }}
+              >
+                -
+              </Button>
 
               <span className={styles.counter_output}>{counter}</span>
               <Button
@@ -125,8 +125,8 @@ export default function Counter({ actualVariant, page, item }: Props) {
                 className={styles.counter_button}
                 onClick={increase}
                 style={{
-    backgroundColor: "white"
-  }}
+                  backgroundColor: "white",
+                }}
               >
                 +
               </Button>
@@ -136,10 +136,10 @@ export default function Counter({ actualVariant, page, item }: Props) {
               <Button
                 variant="primary"
                 className={styles.counter_button}
-                  onClick={AddToCart}
-                  style={{
-    backgroundColor: "white"
-  }}
+                onClick={AddToCart}
+                style={{
+                  backgroundColor: "white",
+                }}
               >
                 Add to Cart
               </Button>
@@ -183,7 +183,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
             className={styles.counter_button}
             onClick={decrease}
             style={{
-            backgroundColor: "white"
+              backgroundColor: "white",
             }}
           >
             -
@@ -194,7 +194,7 @@ export default function Counter({ actualVariant, page, item }: Props) {
             className={styles.counter_button}
             onClick={increase}
             style={{
-            backgroundColor: "white"
+              backgroundColor: "white",
             }}
           >
             +

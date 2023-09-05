@@ -25,7 +25,7 @@
   flex-wrap: wrap;
 }
 
-.checkoutbutton_div { 
+.checkoutbutton_div {
   display: flex;
   justify-content: center;
   background-color: black;
@@ -58,7 +58,6 @@
   cursor: pointer;
   text-decoration: none;
 }
-
 
 /* PRODUCT CARD */
 
@@ -102,11 +101,7 @@
   border-color: #e8faea;
   background-color: white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-<<<<<<< Updated upstream
-  transition: transform 0.3s ease-in-out
-=======
-  /* transition: transform 0.3s ease-in-out; */
->>>>>>> Stashed changes
+  transition: transform 0.3s ease-in-out;
 }
 
 /* HEADER */

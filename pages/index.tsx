@@ -34,7 +34,6 @@ export default function Home() {
   return (
     <>
       <NavBar />
-<<<<<<< Updated upstream
       {loader ? (
         <Loader />
       ) : (
@@ -103,39 +102,17 @@ export default function Home() {
                     className={`${styles.cartLogo}`}
                   />
                 </Link>
+                <Link href="/products">
+                  <button className={styles.exploreButton}>
+                    Explore Products
+                  </button>
+                </Link>
               </div>
-=======
-      <div id="content">
-        {selectedProducts && (
-          <div className={styles.cardContainer}>
-            <div
-              className={`${styles.card} ${styles.cardBig}`}
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <Link href={`/product/${selectedProducts[0].internal_id}`}>
-                <Image
-                  alt={selectedProducts[0].name}
-                  title={selectedProducts[0].name}
-                  src={selectedProducts[0].image}
-                  width={420}
-                  height={420}
-                  className={`${styles.cardLogo}`}
-                />
-              </Link>
-              <Link href="/products">
-              <button className={styles.exploreButton}>Explore Products</button>
-              </Link>
->>>>>>> Stashed changes
             </div>
           )}
           <div className={styles.loremIpsum}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Explore our diverse collection of kitchen appliance tools, designed
+            to elevate your cooking experience to new heights. Made in Berlin.
           </div>
           <div className={styles.titleContainer}>
             <p className={styles.title}>
@@ -143,35 +120,12 @@ export default function Home() {
             </p>
             <div className={styles.discoverContainer}>
               <Link href="/products" className={styles.discover}>
-                <span className={styles.discoverText}>Discover</span>
-                <span className={styles.arrow}>→</span>
+                <span className={styles.discoverText}>Discover →</span>
               </Link>
             </div>
           </div>
-<<<<<<< Updated upstream
         </div>
       )}
-=======
-        )}
-        <div className={styles.loremIpsum}>
-          Explore our diverse collection of kitchen appliance tools,
-          designed to elevate your cooking experience to new heights.
-          Made in Berlin.
-        </div>
-        <div className={styles.titleContainer}>
-          <p className={styles.title}>
-            Discover a wide range of kitchen appliance tools
-          </p>
-          <div className={styles.discoverContainer}>
-            <Link href="/products" className={styles.discover}>
-              <span className={styles.discoverText}>Discover →</span>
-
-            </Link>
-          </div>
-        </div>
-      </div>
->>>>>>> Stashed changes
-
       <Footer />
     </>
   );
