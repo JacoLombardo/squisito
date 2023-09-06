@@ -112,7 +112,6 @@
     padding-bottom: 20px;
   }
 
-
   .loremIpsum {
     font-size: 20px;
     top: 300px;
@@ -137,4 +136,13 @@
 .exploreButton:hover {
   background-color: #e8faea;
   border-color: black;
+}
+
+/* 3D */
+
+.iframe {
+  margin: 50px auto 50px auto;
+  width: fit-content;
+  border-radius: 30% 30% 10% 30%;
+  border: 3px solid black;
 }

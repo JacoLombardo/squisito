@@ -121,6 +121,14 @@ export default function Home() {
               </Link>
             </div>
           </div>
+          <div className={styles.iframe}>
+            <iframe
+              src="https://my.spline.design/squisito-7b6fe053b7b9d8cf09339b8970fb174c/"
+              width="500px"
+              height="500px"
+              style={{ borderRadius: "30% 30% 10% 30%" }}
+            ></iframe>
+          </div>
         </div>
       )}
       <Footer />
