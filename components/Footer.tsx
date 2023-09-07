@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import styles from "@/styles/component.module.css";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -19,15 +20,17 @@ function Footer() {
             <div className="row mt-3">
               <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <h6 className="text-uppercase fw-bold mb-4">
-                  <Image
-                    alt={`Jacopo's Github`}
-                    title={`Jacopo's Github`}
-                    src={`/Images/Navbar/logo2.png`}
-                    width={0}
-                    height={0}
-                    sizes="100vw"
-                    style={{ width: "80px", height: "auto" }}
-                  />
+                  <Link href="/">
+                    <Image
+                      alt="Squisito"
+                      title="Squisito"
+                      src="https://res.cloudinary.com/dtl48kr1u/image/upload/v1694116269/fake-shop/logo2_drwmph.png"
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      style={{ width: "80px", height: "auto" }}
+                    />
+                  </Link>
                 </h6>
                 <p>Fake shop of high class kitchen appliances.</p>
               </div>

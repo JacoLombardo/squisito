@@ -15,10 +15,9 @@ function NavBar() {
       <Container>
         <Navbar.Brand as={Link} href="/">
           <Image
-
-                alt="logo"
-                title="the logo"
-            src="/Images/Navbar/logo2.png"
+            alt="logo"
+            title="the logo"
+            src="https://res.cloudinary.com/dtl48kr1u/image/upload/v1694116269/fake-shop/logo2_drwmph.png"
             width="0"
             height="0"
             sizes="100vw"
