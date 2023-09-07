@@ -10,7 +10,7 @@ export default function MyApp({ Component, pageProps }: any) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/Images/Icons/favicon.png" sizes="any" />
-        <title>Squisito Kitchen Appliances</title>
+        <title>Squisito</title>
         <meta
           name="description"
           content="Fake-shop of high class kitchen appliances."

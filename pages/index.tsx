@@ -127,7 +127,7 @@ export default function Home() {
           <div className={styles.iframe}>
             <iframe
               src="https://my.spline.design/squisito-7b6fe053b7b9d8cf09339b8970fb174c/"
-              className={styles.iframeInner}
+              className={styles.iframe_inner}
             ></iframe>
           </div>
         </div>

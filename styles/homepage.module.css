@@ -95,12 +95,13 @@
   margin-left: auto;
   margin-right: auto;
   padding-top: 40px;
+  /* background-color: red; */
+  width: 430px;
+  position: relative;
 }
 
-.iframeInner {
-  border-radius: 30% 30% 10% 30%;
+.iframe_inner {
   width: 100%;
-  border: 1px solid black;
   max-width: 500px;
   height: 100%;
 }
@@ -145,10 +146,8 @@
     border-radius: 5px;
   }
 
-  .iframeInner {
-    /* border-radius: 30% 30% 10% 30%; */
+  .iframe_inner {
     width: 80%;
-    /* border: 1px solid black; */
     height: 70%;
   }
 }
