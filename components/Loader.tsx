@@ -8,11 +8,11 @@ export default function Loader() {
         <Image
           alt="loader"
           title="loader"
-          src="/Images/IMG_8113.jpeg"
+          src="https://res.cloudinary.com/dtl48kr1u/image/upload/v1694101825/fake-shop/loader_cgvgeu.png"
           width="0"
           height="0"
           sizes="100vw"
-          style={{ width: "120px", height: "auto" }}
+          style={{ width: "150px", height: "auto" }}
           className={styles.loader}
         />
       </div>

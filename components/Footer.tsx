@@ -10,6 +10,7 @@ function Footer() {
           position: "absolute",
           bottom: "0px",
           width: "100%",
+          marginTop: "30px",
         }}
         className="text-center text-lg-start bg-white text-muted"
       >

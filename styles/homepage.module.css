@@ -94,7 +94,7 @@
   height: 500px;
   margin-left: auto;
   margin-right: auto;
-    padding-top: 40px;
+  padding-top: 40px;
 }
 
 .iframeInner {
@@ -140,17 +140,17 @@
     animation: none;
   }
 
-      .iframe {
-      margin: 10px 10px;
-      border-radius: 5px;
-    }
+  .iframe {
+    margin: 10px 10px;
+    border-radius: 5px;
+  }
 
-     .iframeInner {
-      border-radius: 30% 30% 10% 30%;
-      width: 80%;
-      border: 1px solid black;
-      height: 70%;
-    }
+  .iframeInner {
+    /* border-radius: 30% 30% 10% 30%; */
+    width: 80%;
+    /* border: 1px solid black; */
+    height: 70%;
+  }
 }
 
 /* Explore Button Styles */
