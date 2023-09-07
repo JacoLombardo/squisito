@@ -117,16 +117,17 @@ export default function Home() {
             </p>
             <div className={styles.discoverContainer}>
               <Link href="/products" className={styles.discover}>
-                <span className={styles.discoverText}>Discover →</span>
+                <span className={styles.discoverText}>Discover Products →</span>
               </Link>
             </div>
           </div>
+          <span className={styles.discoverText}>
+            Or try out our 3D viewer below.
+          </span>
           <div className={styles.iframe}>
             <iframe
               src="https://my.spline.design/squisito-7b6fe053b7b9d8cf09339b8970fb174c/"
-              width="500px"
-              height="500px"
-              style={{ borderRadius: "30% 30% 10% 30%" }}
+              className={styles.iframeInner}
             ></iframe>
           </div>
         </div>

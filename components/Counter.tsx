@@ -26,10 +26,12 @@ export default function Counter({ actualVariant, page, item }: Props) {
 
   const AddToCart = () => {
     if (actualVariant) {
+      setCounter(1);
+      setShowRemove(false);
       setShowAdd(true);
       setTimeout(() => setShowAdd(false), 1000);
       setSpin(true);
-      AddToCartContext(actualVariant, counter);
+      AddToCartContext(actualVariant, 1);
       setInCart(true);
     }
   };
@@ -101,9 +103,13 @@ export default function Counter({ actualVariant, page, item }: Props) {
 
   return (
     <>
-      {page === "product" && (
+      {(page === "product-info" || page === "product") && (
         <div
-          style={{ position: "absolute", bottom: "15px" }}
+          style={
+            page === "product"
+              ? { position: "absolute", bottom: "15px" }
+              : { position: "relative", bottom: "0px" }
+          }
           className={styles.counter}
         >
           {inCart ? (

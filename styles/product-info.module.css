@@ -17,6 +17,12 @@
   margin: 0 auto;
 }
 
+.product_info_counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .product_info_image {
   width: 30%;
   height: 30%;
@@ -81,9 +87,7 @@
     margin-left: 0;
   }
 
-
   .product_info_content {
     padding: 20px;
   }
-
 }
