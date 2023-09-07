@@ -85,6 +85,26 @@
   animation: slideUp 1s ease-out 2s forwards;
 }
 
+/* 3D Iframe */
+
+.iframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+    padding-top: 40px;
+}
+
+.iframeInner {
+  border-radius: 30% 30% 10% 30%;
+  width: 100%;
+  border: 1px solid black;
+  max-width: 500px;
+  height: 100%;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .title {
@@ -119,6 +139,18 @@
     max-width: 100%;
     animation: none;
   }
+
+      .iframe {
+      margin: 10px 10px;
+      border-radius: 5px;
+    }
+
+     .iframeInner {
+      border-radius: 30% 30% 10% 30%;
+      width: 80%;
+      border: 1px solid black;
+      height: 70%;
+    }
 }
 
 /* Explore Button Styles */
@@ -136,13 +168,4 @@
 .exploreButton:hover {
   background-color: #e8faea;
   border-color: black;
-}
-
-/* 3D */
-
-.iframe {
-  margin: 50px auto 50px auto;
-  width: fit-content;
-  border-radius: 30% 30% 10% 30%;
-  border: 3px solid black;
 }
