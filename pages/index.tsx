@@ -129,6 +129,18 @@ export default function Home() {
               src="https://my.spline.design/squisito-7b6fe053b7b9d8cf09339b8970fb174c/"
               className={styles.iframe_inner}
             ></iframe>
+            {/* <div className={styles.iframe_cover}> */}
+            <div className={styles.iframe_div}>
+              <Image
+                alt="cover"
+                src="https://res.cloudinary.com/dtl48kr1u/image/upload/v1694156918/fake-shop/splinecover_jmdavu.png"
+                width="0"
+                height="0"
+                sizes="100vw"
+                style={{ width: "auto", height: "70px" }}
+                className={styles.iframe_cover}
+              />
+            </div>
           </div>
         </div>
       )}

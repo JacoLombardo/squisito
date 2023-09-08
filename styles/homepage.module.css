@@ -106,6 +106,22 @@
   height: 100%;
 }
 
+.iframe_cover {
+  position: absolute;
+  bottom: 17px;
+  right: 0px;
+}
+
+.iframe_div {
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 40px;
+  width: 430px;
+  z-index: 1;
+  position: absolute;
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .title {
@@ -142,13 +158,22 @@
   }
 
   .iframe {
-    margin: 10px 10px;
-    border-radius: 5px;
+    width: 100%;
   }
 
   .iframe_inner {
-    width: 80%;
-    height: 70%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .iframe_cover {
+    position: absolute;
+    bottom: 17px;
+    right: 0px;
+  }
+
+  .iframe_div {
+    width: 100%;
   }
 }
 
