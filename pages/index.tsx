@@ -39,9 +39,9 @@ export default function Home() {
       ) : (
         <div id="content">
           {selectedProducts && (
-            <div className={styles.cardContainer}>
+            <div className={styles.card_container}>
               <div
-                className={`${styles.card} ${styles.cardBig}`}
+                className={`${styles.card} ${styles.card_big}`}
                 style={{
                   display: "flex",
                   flexDirection: "column",
@@ -56,11 +56,11 @@ export default function Home() {
                     src={selectedProducts[0].image}
                     width={420}
                     height={420}
-                    className={`${styles.cardLogo}`}
+                    className={`${styles.card_logo}`}
                   />
                 </Link>
                 <Link href="/products">
-                  <button className={styles.exploreButton}>
+                  <button className={styles.explore_button}>
                     Explore Products
                   </button>
                 </Link>
@@ -81,7 +81,7 @@ export default function Home() {
                     src={selectedProducts[1].image}
                     width={320}
                     height={320}
-                    className={`${styles.cartLogo}`}
+                    className={`${styles.cart_logo}`}
                   />
                 </Link>
               </div>
@@ -101,27 +101,29 @@ export default function Home() {
                     src={selectedProducts[2].image}
                     width={320}
                     height={320}
-                    className={`${styles.cartLogo}`}
+                    className={`${styles.cart_logo}`}
                   />
                 </Link>
               </div>
             </div>
           )}
-          <div className={styles.loremIpsum}>
+          <div className={styles.description}>
             Explore our diverse collection of kitchen appliance tools, designed
             to elevate your cooking experience to new heights. Made in Berlin.
           </div>
-          <div className={styles.titleContainer}>
+          <div className={styles.title_container}>
             <p className={styles.title}>
               Discover a wide range of kitchen appliance tools
             </p>
-            <div className={styles.discoverContainer}>
+            <div className={styles.discover_container}>
               <Link href="/products" className={styles.discover}>
-                <span className={styles.discoverText}>Discover Products →</span>
+                <span className={styles.discover_text}>
+                  Discover Products →
+                </span>
               </Link>
             </div>
           </div>
-          <span className={styles.discoverText}>
+          <span className={styles.discover_text}>
             Or try out our 3D viewer below.
           </span>
           <div className={styles.iframe}>
@@ -129,7 +131,6 @@ export default function Home() {
               src="https://my.spline.design/squisito-7b6fe053b7b9d8cf09339b8970fb174c/"
               className={styles.iframe_inner}
             ></iframe>
-            {/* <div className={styles.iframe_cover}> */}
             <div className={styles.iframe_div}>
               <Image
                 alt="cover"

@@ -22,7 +22,6 @@ function NavBar() {
             height="0"
             sizes="100vw"
             style={{ width: "120px", height: "auto" }}
-            className={`${styles.Logo}`}
           />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -31,10 +30,10 @@ function NavBar() {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ml-auto ${styles.nav}`}>
-            <Nav.Link as={Link} href="/" className={styles.navLink}>
+            <Nav.Link as={Link} href="/" className={styles.nav_link}>
               Home
             </Nav.Link>
-            <Nav.Link as={Link} href="/products" className={styles.navLink}>
+            <Nav.Link as={Link} href="/products" className={styles.nav_link}>
               Products
             </Nav.Link>
             {cart.length === 0 ? (
@@ -62,7 +61,7 @@ function NavBar() {
                 </div>
               </Nav.Link>
             ) : (
-              <Nav.Link as={Link} href="/cart" className={styles.navLink}>
+              <Nav.Link as={Link} href="/cart" className={styles.nav_link}>
                 Cart
               </Nav.Link>
             )}

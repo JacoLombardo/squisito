@@ -21,7 +21,7 @@
   padding-left: 40px;
 }
 
-.cardContainer {
+.card_container {
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -38,18 +38,37 @@
   animation: slideIn 1.8s;
 }
 
-.cardLogo {
+.card_logo {
   max-width: 100%;
   height: auto;
 }
 
-.cardBig {
+.card_big {
   width: 530px;
   height: 530px;
   align-items: center;
 }
 
-/* Discover Styles */
+/* EXPLORE BUTTON */
+
+.explore_button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: 0.3px solid black;
+  border-radius: 60px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.explore_button:hover {
+  background-color: #e8faea;
+  border-color: black;
+}
+
+/* DISCOVER */
+
 .discover {
   color: black;
   text-decoration: none;
@@ -58,15 +77,16 @@
   padding-top: 40px;
 }
 
-.discoverText {
+.discover_text {
   display: flex;
   justify-content: center;
   font-family: "Poppins";
   font-size: 20px;
 }
 
-/* Lorem Ipsum Styles */
-.loremIpsum {
+/* DESCRIPTION */
+
+.description {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,13 +148,13 @@
     font-size: 40px;
   }
 
-  .titleContainer {
+  .title_container {
     flex-direction: column;
     align-items: center;
     margin-left: 0;
   }
 
-  .cardContainer {
+  .card_container {
     flex-direction: column;
     align-items: center;
   }
@@ -144,12 +164,12 @@
     height: auto;
   }
 
-  .cardBig {
+  .card_big {
     width: 90%;
     padding-bottom: 20px;
   }
 
-  .loremIpsum {
+  .description {
     font-size: 20px;
     top: 300px;
     width: 90%;
@@ -175,21 +195,4 @@
   .iframe_div {
     width: 100%;
   }
-}
-
-/* Explore Button Styles */
-.exploreButton {
-  margin-top: 10px;
-  padding: 10px 20px;
-  background-color: white;
-  color: black;
-  border: 0.3px solid black;
-  border-radius: 60px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.exploreButton:hover {
-  background-color: #e8faea;
-  border-color: black;
 }

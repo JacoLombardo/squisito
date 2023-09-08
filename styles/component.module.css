@@ -10,7 +10,7 @@
   max-width: 100%;
 }
 
-.navLink {
+.nav_link {
   font-size: 20px;
   font-display: 100;
   color: #000;
@@ -189,6 +189,11 @@
 }
 
 /* FOOTER */
+
+.footer_mail {
+  color: "black";
+  text-decoration: "none";
+}
 
 /* .product_footer {
   display: flex;

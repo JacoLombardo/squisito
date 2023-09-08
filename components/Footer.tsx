@@ -74,7 +74,7 @@ function Footer() {
                 <p>
                   <a
                     href="mailto:jacopo.lombardo@outlook.com"
-                    style={{ color: "black", textDecoration: "none" }}
+                    className={styles.footer_mail}
                   >
                     jacopo.lombardo@outlook.com
                   </a>
@@ -82,7 +82,7 @@ function Footer() {
                 <p>
                   <a
                     href="mailto:julianeschawert@gmail.com"
-                    style={{ color: "black", textDecoration: "none" }}
+                    className={styles.footer_mail}
                   >
                     julianeschawert@gmail.com
                   </a>
