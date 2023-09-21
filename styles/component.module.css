@@ -83,6 +83,10 @@
     border-style: solid;
     border-color: transparent #f1f1f1 transparent transparent;
   }
+  .loader_div {
+    padding-top: 45%;
+    padding-left: 30%;
+  }
 }
 
 @media (min-width: 768px) {
@@ -100,6 +104,10 @@
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent #f1f1f1 transparent;
+  }
+  .loader_div {
+    padding-top: 15%;
+    padding-left: 45%;
   }
 }
 
@@ -178,15 +186,16 @@
 /* LOADER */
 
 .loader {
-  animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
 .loader_div {
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 100px;
-  width: 150px;
-  padding-bottom: 100px;
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
 /* FOOTER */
